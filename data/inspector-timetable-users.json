@@ -1,0 +1,2704 @@
+[
+  {
+    "id": "u-anil-sanap",
+    "name": "Anil Sanap",
+    "email": "anil.sanap@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "assessmentDate": "2026-08-17",
+    "scopeSector": "NABCB IAF SCOPE 17",
+    "assignedQuizIds": [
+      "commodity-01-c-steel-plates-sheets-strips-flats-coils-skelps-paper-3",
+      "commodity-02-b-steel-bars-rods-wire-wire-rods-paper-2",
+      "commodity-03-c-steel-structure-items-sections-beams-columns-paper-3",
+      "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+      "commodity-05-b-steel-forging-flanges-paper-2",
+      "commodity-06-a-steel-fittings-paper-1",
+      "commodity-07-b-steel-casting-paper-2",
+      "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+      "commodity-09-b-welding-rods-electrodes-and-filler-metals-paper-2",
+      "commodity-10-c-pressure-vessel-items-paper-3",
+      "commodity-11-c-heat-exchanger-paper-3",
+      "commodity-12-b-piping-and-pipe-spool-paper-2",
+      "commodity-13-a-skids-paper-1",
+      "commodity-14-b-storage-tank-paper-2",
+      "commodity-15-a-fabricated-steel-structure-paper-1",
+      "commodity-16-c-gas-cylinders-paper-3",
+      "commodity-17-c-cascades-paper-3",
+      "commodity-18-c-drill-through-equipment-paper-3",
+      "commodity-19-b-wellhead-tree-equipment-paper-2",
+      "commodity-20-b-fired-heaters-paper-2",
+      "commodity-21-b-petroleum-gas-dispenser-paper-2",
+      "commodity-22-c-bolts-nuts-stud-paper-3",
+      "commodity-23-c-pumps-paper-3",
+      "commodity-24-b-compressors-paper-2",
+      "commodity-25-c-fans-paper-3",
+      "commodity-26-b-blowers-paper-2",
+      "commodity-27-b-gear-box-paper-2",
+      "commodity-28-b-utm-machine-paper-2",
+      "commodity-29-a-hardness-test-machines-paper-1",
+      "commodity-30-a-impact-test-machines-paper-1",
+      "commodity-31-a-cooling-tower-paper-1",
+      "commodity-32-c-cranes-lifting-equipment-paper-3",
+      "commodity-33-a-machine-tools-dies-paper-1",
+      "commodity-34-c-rotors-paper-3",
+      "commodity-35-c-valves-paper-3",
+      "commodity-36-a-dryers-paper-1",
+      "commodity-37-a-agitators-paper-1",
+      "commodity-18-conveyor-systems-scope-18-paper-1"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-01-c-steel-plates-sheets-strips-flats-coils-skelps-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-17",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-02-b-steel-bars-rods-wire-wire-rods-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-17",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Bars / Rods / Wire / Wire Rods",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-03-c-steel-structure-items-sections-beams-columns-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-18",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Structure Items / Sections / Beams / Columns",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-19",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Billet / Blooms / Slabs",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-05-b-steel-forging-flanges-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-19",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Forging / Flanges",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-06-a-steel-fittings-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-20",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Fittings",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-07-b-steel-casting-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-20",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Casting",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-21",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Tubes / Pipes / Line Pipes",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-09-b-welding-rods-electrodes-and-filler-metals-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-22",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Welding Rods, Electrodes and Filler Metals",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-10-c-pressure-vessel-items-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-24",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Pressure Vessel / Items",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-11-c-heat-exchanger-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-24",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Heat Exchanger",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-12-b-piping-and-pipe-spool-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-25",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Piping and Pipe Spool",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-13-a-skids-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-26",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Skids",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-14-b-storage-tank-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-26",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Storage Tank",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-15-a-fabricated-steel-structure-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-27",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fabricated Steel Structure",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-16-c-gas-cylinders-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-27",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Gas Cylinders",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-17-c-cascades-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-28",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Cascades",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-18-c-drill-through-equipment-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-28",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Drill-through Equipment",
+        "scheduledSlot": "15:30–16:00"
+      },
+      {
+        "quizId": "commodity-19-b-wellhead-tree-equipment-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-29",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Wellhead & Tree Equipment",
+        "scheduledSlot": "11:00–11:30"
+      },
+      {
+        "quizId": "commodity-20-b-fired-heaters-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-29",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fired Heaters",
+        "scheduledSlot": "16:00–16:30"
+      },
+      {
+        "quizId": "commodity-21-b-petroleum-gas-dispenser-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-31",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Petroleum & Gas Dispenser",
+        "scheduledSlot": "11:30–12:00"
+      },
+      {
+        "quizId": "commodity-22-c-bolts-nuts-stud-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694989,
+        "assessmentDate": "2026-08-31",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Bolts / Nuts / Stud",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-23-c-pumps-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-01",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Pumps",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-24-b-compressors-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-01",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Compressors",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-25-c-fans-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-02",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Fans",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-26-b-blowers-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-03",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Blowers",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-27-b-gear-box-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-03",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Gear Box",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-28-b-utm-machine-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-04",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "UTM Machine",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-29-a-hardness-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-04",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Hardness Test Machines",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-30-a-impact-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-05",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Impact Test Machines",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-31-a-cooling-tower-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-05",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cooling Tower",
+        "scheduledSlot": "15:30–16:00"
+      },
+      {
+        "quizId": "commodity-32-c-cranes-lifting-equipment-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-06",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cranes / Lifting Equipment",
+        "scheduledSlot": "11:00–11:30"
+      },
+      {
+        "quizId": "commodity-33-a-machine-tools-dies-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-06",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Machine Tools / Dies",
+        "scheduledSlot": "16:00–16:30"
+      },
+      {
+        "quizId": "commodity-34-c-rotors-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-07",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Rotors",
+        "scheduledSlot": "11:30–12:00"
+      },
+      {
+        "quizId": "commodity-35-c-valves-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-07",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Valves",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-36-a-dryers-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-08",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Dryers",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-37-a-agitators-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-09-08",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Agitators",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-18-conveyor-systems-scope-18-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791193551015,
+        "assessmentDate": "2026-09-09",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Conveyor System",
+        "scheduledSlot": "09:00–09:30"
+      }
+    ],
+    "scope17Category": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+    "scope18Category": "Conveyor System"
+  },
+  {
+    "id": "u-dhrumil-trivedi",
+    "name": "Dhrumil Trivedi",
+    "email": "dhrumil.trivedi@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 17",
+    "assignedQuizIds": [
+      "commodity-01-a-steel-plates-sheets-strips-flats-coils-skelps-paper-1",
+      "commodity-02-b-steel-bars-rods-wire-wire-rods-paper-2",
+      "commodity-03-b-steel-structure-items-sections-beams-columns-paper-2",
+      "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+      "commodity-05-c-steel-forging-flanges-paper-3",
+      "commodity-06-b-steel-fittings-paper-2",
+      "commodity-07-c-steel-casting-paper-3",
+      "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+      "commodity-09-c-welding-rods-electrodes-and-filler-metals-paper-3",
+      "commodity-10-c-pressure-vessel-items-paper-3",
+      "commodity-11-b-heat-exchanger-paper-2",
+      "commodity-12-a-piping-and-pipe-spool-paper-1",
+      "commodity-13-a-skids-paper-1",
+      "commodity-14-b-storage-tank-paper-2",
+      "commodity-15-a-fabricated-steel-structure-paper-1",
+      "commodity-16-b-gas-cylinders-paper-2",
+      "commodity-17-a-cascades-paper-1",
+      "commodity-18-a-drill-through-equipment-paper-1",
+      "commodity-19-b-wellhead-tree-equipment-paper-2",
+      "commodity-20-c-fired-heaters-paper-3",
+      "commodity-21-a-petroleum-gas-dispenser-paper-1",
+      "commodity-22-a-bolts-nuts-stud-paper-1",
+      "commodity-23-c-pumps-paper-3",
+      "commodity-24-a-compressors-paper-1",
+      "commodity-25-a-fans-paper-1",
+      "commodity-26-c-blowers-paper-3",
+      "commodity-27-c-gear-box-paper-3",
+      "commodity-28-b-utm-machine-paper-2",
+      "commodity-29-a-hardness-test-machines-paper-1",
+      "commodity-30-c-impact-test-machines-paper-3",
+      "commodity-31-b-cooling-tower-paper-2",
+      "commodity-32-c-cranes-lifting-equipment-paper-3",
+      "commodity-33-a-machine-tools-dies-paper-1",
+      "commodity-34-a-rotors-paper-1",
+      "commodity-35-b-valves-paper-2",
+      "commodity-36-b-dryers-paper-2",
+      "commodity-37-b-agitators-paper-2",
+      "commodity-18-conveyor-systems-scope-18-paper-2"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-01-a-steel-plates-sheets-strips-flats-coils-skelps-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-02-b-steel-bars-rods-wire-wire-rods-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Bars / Rods / Wire / Wire Rods",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-03-b-steel-structure-items-sections-beams-columns-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Structure Items / Sections / Beams / Columns",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Billet / Blooms / Slabs",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-05-c-steel-forging-flanges-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Forging / Flanges",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-06-b-steel-fittings-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Fittings",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-07-c-steel-casting-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Casting",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Tubes / Pipes / Line Pipes",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-09-c-welding-rods-electrodes-and-filler-metals-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Welding Rods, Electrodes and Filler Metals",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-10-c-pressure-vessel-items-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Pressure Vessel / Items",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-11-b-heat-exchanger-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Heat Exchanger",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-12-a-piping-and-pipe-spool-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Piping and Pipe Spool",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-13-a-skids-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Skids",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-14-b-storage-tank-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Storage Tank",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-15-a-fabricated-steel-structure-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fabricated Steel Structure",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-16-b-gas-cylinders-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Gas Cylinders",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-17-a-cascades-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Cascades",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-18-a-drill-through-equipment-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Drill-through Equipment",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-19-b-wellhead-tree-equipment-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Wellhead & Tree Equipment",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-20-c-fired-heaters-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fired Heaters",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-21-a-petroleum-gas-dispenser-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Petroleum & Gas Dispenser",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-22-a-bolts-nuts-stud-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Bolts / Nuts / Stud",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-23-c-pumps-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Pumps",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-24-a-compressors-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Compressors",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-25-a-fans-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Fans",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-26-c-blowers-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Blowers",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-27-c-gear-box-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Gear Box",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-28-b-utm-machine-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "UTM Machine",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-29-a-hardness-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Hardness Test Machines",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-30-c-impact-test-machines-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Impact Test Machines",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-31-b-cooling-tower-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cooling Tower",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-32-c-cranes-lifting-equipment-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cranes / Lifting Equipment",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-33-a-machine-tools-dies-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Machine Tools / Dies",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-34-a-rotors-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Rotors",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-35-b-valves-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Valves",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-36-b-dryers-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Dryers",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-37-b-agitators-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Agitators",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-18-conveyor-systems-scope-18-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791193551015,
+        "assessmentDate": "2026-09-09",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Conveyor System",
+        "scheduledSlot": "09:00–09:30"
+      }
+    ],
+    "scope17Category": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+    "scope18Category": "Conveyor System"
+  },
+  {
+    "id": "u-rohit-barge",
+    "name": "Rohit Barge",
+    "email": "rohit.barge@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 17",
+    "assignedQuizIds": [
+      "commodity-01-b-steel-plates-sheets-strips-flats-coils-skelps-paper-2",
+      "commodity-02-a-steel-bars-rods-wire-wire-rods-paper-1",
+      "commodity-03-b-steel-structure-items-sections-beams-columns-paper-2",
+      "commodity-04-c-steel-billet-blooms-slabs-paper-3",
+      "commodity-05-c-steel-forging-flanges-paper-3",
+      "commodity-06-b-steel-fittings-paper-2",
+      "commodity-07-c-steel-casting-paper-3",
+      "commodity-08-b-steel-tubes-pipes-line-pipes-paper-2",
+      "commodity-09-a-welding-rods-electrodes-and-filler-metals-paper-1",
+      "commodity-10-b-pressure-vessel-items-paper-2",
+      "commodity-11-c-heat-exchanger-paper-3",
+      "commodity-12-b-piping-and-pipe-spool-paper-2",
+      "commodity-13-b-skids-paper-2",
+      "commodity-14-b-storage-tank-paper-2",
+      "commodity-15-c-fabricated-steel-structure-paper-3",
+      "commodity-16-b-gas-cylinders-paper-2",
+      "commodity-17-a-cascades-paper-1",
+      "commodity-18-b-drill-through-equipment-paper-2",
+      "commodity-19-a-wellhead-tree-equipment-paper-1",
+      "commodity-20-b-fired-heaters-paper-2",
+      "commodity-21-a-petroleum-gas-dispenser-paper-1",
+      "commodity-22-c-bolts-nuts-stud-paper-3",
+      "commodity-23-a-pumps-paper-1",
+      "commodity-24-a-compressors-paper-1",
+      "commodity-25-a-fans-paper-1",
+      "commodity-26-b-blowers-paper-2",
+      "commodity-27-c-gear-box-paper-3",
+      "commodity-28-c-utm-machine-paper-3",
+      "commodity-29-c-hardness-test-machines-paper-3",
+      "commodity-30-a-impact-test-machines-paper-1",
+      "commodity-31-a-cooling-tower-paper-1",
+      "commodity-32-b-cranes-lifting-equipment-paper-2",
+      "commodity-33-a-machine-tools-dies-paper-1",
+      "commodity-34-b-rotors-paper-2",
+      "commodity-35-a-valves-paper-1",
+      "commodity-36-c-dryers-paper-3",
+      "commodity-37-a-agitators-paper-1",
+      "commodity-18-conveyor-systems-scope-18-paper-3"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-01-b-steel-plates-sheets-strips-flats-coils-skelps-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-02-a-steel-bars-rods-wire-wire-rods-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Bars / Rods / Wire / Wire Rods",
+        "scheduledSlot": "15:15–15:45"
+      },
+      {
+        "quizId": "commodity-03-b-steel-structure-items-sections-beams-columns-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Structure Items / Sections / Beams / Columns",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-04-c-steel-billet-blooms-slabs-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Billet / Blooms / Slabs",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-05-c-steel-forging-flanges-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Forging / Flanges",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-06-b-steel-fittings-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Fittings",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-07-c-steel-casting-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Casting",
+        "scheduledSlot": "15:15–15:45"
+      },
+      {
+        "quizId": "commodity-08-b-steel-tubes-pipes-line-pipes-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Tubes / Pipes / Line Pipes",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-09-a-welding-rods-electrodes-and-filler-metals-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Welding Rods, Electrodes and Filler Metals",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-10-b-pressure-vessel-items-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Pressure Vessel / Items",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-11-c-heat-exchanger-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Heat Exchanger",
+        "scheduledSlot": "15:15–15:45"
+      },
+      {
+        "quizId": "commodity-12-b-piping-and-pipe-spool-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Piping and Pipe Spool",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-13-b-skids-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Skids",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-14-b-storage-tank-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Storage Tank",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-15-c-fabricated-steel-structure-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fabricated Steel Structure",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-16-b-gas-cylinders-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Gas Cylinders",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-17-a-cascades-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Cascades",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-18-b-drill-through-equipment-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Drill-through Equipment",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-19-a-wellhead-tree-equipment-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Wellhead & Tree Equipment",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-20-b-fired-heaters-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fired Heaters",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-21-a-petroleum-gas-dispenser-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Petroleum & Gas Dispenser",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-22-c-bolts-nuts-stud-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Bolts / Nuts / Stud",
+        "scheduledSlot": "14:45–15:15"
+      },
+      {
+        "quizId": "commodity-23-a-pumps-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Pumps",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-24-a-compressors-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Compressors",
+        "scheduledSlot": "15:15–15:45"
+      },
+      {
+        "quizId": "commodity-25-a-fans-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Fans",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-26-b-blowers-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Blowers",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-27-c-gear-box-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Gear Box",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-28-c-utm-machine-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "UTM Machine",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-29-c-hardness-test-machines-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Hardness Test Machines",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-30-a-impact-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Impact Test Machines",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-31-a-cooling-tower-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cooling Tower",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-32-b-cranes-lifting-equipment-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cranes / Lifting Equipment",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-33-a-machine-tools-dies-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Machine Tools / Dies",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-34-b-rotors-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Rotors",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-35-a-valves-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Valves",
+        "scheduledSlot": "14:45–15:15"
+      },
+      {
+        "quizId": "commodity-36-c-dryers-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Dryers",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-37-a-agitators-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Agitators",
+        "scheduledSlot": "15:15–15:45"
+      },
+      {
+        "quizId": "commodity-18-conveyor-systems-scope-18-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791193551015,
+        "assessmentDate": "2026-09-09",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Conveyor System",
+        "scheduledSlot": "09:00–09:30"
+      }
+    ],
+    "scope17Category": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+    "scope18Category": "Conveyor System"
+  },
+  {
+    "id": "u-deepak-kolambe",
+    "name": "Deepak Kolambe",
+    "email": "deepak.kolambe@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "assessmentDate": "2026-08-17",
+    "scopeSector": "NABCB IAF SCOPE 28",
+    "assignedQuizIds": [
+      "commodity-49-a-building-construction-paper-1"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-49-a-building-construction-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "assessmentDate": "2026-08-17",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 28",
+        "scopeCategory": "Building Construction",
+        "scheduledSlot": "10:15–10:45"
+      }
+    ],
+    "scope28Category": "Building Construction"
+  },
+  {
+    "id": "u-parag-wadekar",
+    "name": "Parag Wadekar",
+    "email": "parag.wadekar@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 28",
+    "assignedQuizIds": [
+      "commodity-49-a-building-construction-paper-1"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-49-a-building-construction-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 28",
+        "scopeCategory": "Building Construction",
+        "scheduledSlot": "10:45–11:15"
+      }
+    ],
+    "scope28Category": "Building Construction"
+  },
+  {
+    "id": "u-ramesh-kumar",
+    "name": "Ramesh Kumar",
+    "email": "ramesh.kumar@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 17",
+    "assignedQuizIds": [
+      "commodity-01-a-steel-plates-sheets-strips-flats-coils-skelps-paper-1",
+      "commodity-02-a-steel-bars-rods-wire-wire-rods-paper-1",
+      "commodity-03-a-steel-structure-items-sections-beams-columns-paper-1",
+      "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+      "commodity-05-c-steel-forging-flanges-paper-3",
+      "commodity-06-b-steel-fittings-paper-2",
+      "commodity-07-a-steel-casting-paper-1",
+      "commodity-08-b-steel-tubes-pipes-line-pipes-paper-2",
+      "commodity-09-c-welding-rods-electrodes-and-filler-metals-paper-3",
+      "commodity-10-c-pressure-vessel-items-paper-3",
+      "commodity-11-b-heat-exchanger-paper-2",
+      "commodity-12-b-piping-and-pipe-spool-paper-2",
+      "commodity-13-c-skids-paper-3",
+      "commodity-14-a-storage-tank-paper-1",
+      "commodity-15-a-fabricated-steel-structure-paper-1",
+      "commodity-16-b-gas-cylinders-paper-2",
+      "commodity-17-b-cascades-paper-2",
+      "commodity-18-a-drill-through-equipment-paper-1",
+      "commodity-19-a-wellhead-tree-equipment-paper-1",
+      "commodity-20-b-fired-heaters-paper-2",
+      "commodity-21-b-petroleum-gas-dispenser-paper-2",
+      "commodity-22-b-bolts-nuts-stud-paper-2",
+      "commodity-23-b-pumps-paper-2",
+      "commodity-24-c-compressors-paper-3",
+      "commodity-25-b-fans-paper-2",
+      "commodity-26-c-blowers-paper-3",
+      "commodity-27-c-gear-box-paper-3",
+      "commodity-28-c-utm-machine-paper-3",
+      "commodity-29-a-hardness-test-machines-paper-1",
+      "commodity-30-a-impact-test-machines-paper-1",
+      "commodity-31-b-cooling-tower-paper-2",
+      "commodity-32-b-cranes-lifting-equipment-paper-2",
+      "commodity-33-c-machine-tools-dies-paper-3",
+      "commodity-34-b-rotors-paper-2",
+      "commodity-35-a-valves-paper-1",
+      "commodity-36-a-dryers-paper-1",
+      "commodity-37-a-agitators-paper-1",
+      "commodity-18-conveyor-systems-scope-18-paper-1"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-01-a-steel-plates-sheets-strips-flats-coils-skelps-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-02-a-steel-bars-rods-wire-wire-rods-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Bars / Rods / Wire / Wire Rods",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-03-a-steel-structure-items-sections-beams-columns-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Structure Items / Sections / Beams / Columns",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Billet / Blooms / Slabs",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-05-c-steel-forging-flanges-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Forging / Flanges",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-06-b-steel-fittings-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Fittings",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-07-a-steel-casting-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Casting",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-08-b-steel-tubes-pipes-line-pipes-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Tubes / Pipes / Line Pipes",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-09-c-welding-rods-electrodes-and-filler-metals-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Welding Rods, Electrodes and Filler Metals",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-10-c-pressure-vessel-items-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Pressure Vessel / Items",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-11-b-heat-exchanger-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Heat Exchanger",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-12-b-piping-and-pipe-spool-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Piping and Pipe Spool",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-13-c-skids-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Skids",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-14-a-storage-tank-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Storage Tank",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-15-a-fabricated-steel-structure-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fabricated Steel Structure",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-16-b-gas-cylinders-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Gas Cylinders",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-17-b-cascades-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Cascades",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-18-a-drill-through-equipment-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Drill-through Equipment",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-19-a-wellhead-tree-equipment-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Wellhead & Tree Equipment",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-20-b-fired-heaters-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fired Heaters",
+        "scheduledSlot": "15:30–16:00"
+      },
+      {
+        "quizId": "commodity-21-b-petroleum-gas-dispenser-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Petroleum & Gas Dispenser",
+        "scheduledSlot": "11:00–11:30"
+      },
+      {
+        "quizId": "commodity-22-b-bolts-nuts-stud-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Bolts / Nuts / Stud",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-23-b-pumps-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Pumps",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-24-c-compressors-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Compressors",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-25-b-fans-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Fans",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-26-c-blowers-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Blowers",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-27-c-gear-box-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Gear Box",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-28-c-utm-machine-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "UTM Machine",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-29-a-hardness-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Hardness Test Machines",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-30-a-impact-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Impact Test Machines",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-31-b-cooling-tower-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cooling Tower",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-32-b-cranes-lifting-equipment-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cranes / Lifting Equipment",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-33-c-machine-tools-dies-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Machine Tools / Dies",
+        "scheduledSlot": "15:30–16:00"
+      },
+      {
+        "quizId": "commodity-34-b-rotors-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Rotors",
+        "scheduledSlot": "11:00–11:30"
+      },
+      {
+        "quizId": "commodity-35-a-valves-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Valves",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-36-a-dryers-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Dryers",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-37-a-agitators-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Agitators",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-18-conveyor-systems-scope-18-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791193551015,
+        "assessmentDate": "2026-09-09",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Conveyor System",
+        "scheduledSlot": "09:00–09:30"
+      }
+    ],
+    "scope17Category": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+    "scope18Category": "Conveyor System"
+  },
+  {
+    "id": "u-s-g-azhegasan",
+    "name": "S G Azhegasan",
+    "email": "s.azhegasan@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 19",
+    "assignedQuizIds": [
+      "commodity-38-c-junction-box-distribution-box-paper-3",
+      "commodity-39-c-switch-gears-paper-3",
+      "commodity-40-b-switch-boards-paper-2",
+      "commodity-41-b-lt-motors-paper-2",
+      "commodity-42-b-control-panel-paper-2",
+      "commodity-43-b-solar-pv-modules-paper-2",
+      "commodity-44-c-solar-panel-system-and-batteries-paper-3",
+      "commodity-45-b-ups-paper-2",
+      "commodity-46-b-battery-paper-2",
+      "commodity-47-b-cable-trays-system-paper-2",
+      "commodity-48-b-electric-domestic-appliances-paper-2"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-38-c-junction-box-distribution-box-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Junction Box / Distribution Box",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-39-c-switch-gears-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Switch Gears",
+        "scheduledSlot": "12:30–13:00"
+      },
+      {
+        "quizId": "commodity-40-b-switch-boards-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Switch Boards",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-41-b-lt-motors-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "LT Motors",
+        "scheduledSlot": "12:30–13:00"
+      },
+      {
+        "quizId": "commodity-42-b-control-panel-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Control Panel",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-43-b-solar-pv-modules-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Solar PV Modules",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-44-c-solar-panel-system-and-batteries-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Solar Panel System and Batteries",
+        "scheduledSlot": "12:30–13:00"
+      },
+      {
+        "quizId": "commodity-45-b-ups-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "UPS",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-46-b-battery-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Battery",
+        "scheduledSlot": "12:30–13:00"
+      },
+      {
+        "quizId": "commodity-47-b-cable-trays-system-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Cable Trays System",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-48-b-electric-domestic-appliances-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Electric Domestic Appliances",
+        "scheduledSlot": "12:30–13:00"
+      }
+    ],
+    "scope19Category": "Junction Box / Distribution Box"
+  },
+  {
+    "id": "u-sagar-sontakke",
+    "name": "Sagar Sontakke",
+    "email": "sagar.sontakke@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 17",
+    "assignedQuizIds": [
+      "commodity-01-c-steel-plates-sheets-strips-flats-coils-skelps-paper-3",
+      "commodity-02-a-steel-bars-rods-wire-wire-rods-paper-1",
+      "commodity-03-a-steel-structure-items-sections-beams-columns-paper-1",
+      "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+      "commodity-05-b-steel-forging-flanges-paper-2",
+      "commodity-06-a-steel-fittings-paper-1",
+      "commodity-07-c-steel-casting-paper-3",
+      "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+      "commodity-09-a-welding-rods-electrodes-and-filler-metals-paper-1",
+      "commodity-10-c-pressure-vessel-items-paper-3",
+      "commodity-11-c-heat-exchanger-paper-3",
+      "commodity-12-b-piping-and-pipe-spool-paper-2",
+      "commodity-13-b-skids-paper-2",
+      "commodity-14-a-storage-tank-paper-1",
+      "commodity-15-b-fabricated-steel-structure-paper-2",
+      "commodity-16-b-gas-cylinders-paper-2",
+      "commodity-17-b-cascades-paper-2",
+      "commodity-18-a-drill-through-equipment-paper-1",
+      "commodity-19-a-wellhead-tree-equipment-paper-1",
+      "commodity-20-b-fired-heaters-paper-2",
+      "commodity-21-c-petroleum-gas-dispenser-paper-3",
+      "commodity-22-b-bolts-nuts-stud-paper-2",
+      "commodity-23-b-pumps-paper-2",
+      "commodity-24-b-compressors-paper-2",
+      "commodity-25-c-fans-paper-3",
+      "commodity-26-c-blowers-paper-3",
+      "commodity-27-a-gear-box-paper-1",
+      "commodity-28-c-utm-machine-paper-3",
+      "commodity-29-c-hardness-test-machines-paper-3",
+      "commodity-30-a-impact-test-machines-paper-1",
+      "commodity-31-a-cooling-tower-paper-1",
+      "commodity-32-b-cranes-lifting-equipment-paper-2",
+      "commodity-33-c-machine-tools-dies-paper-3",
+      "commodity-34-a-rotors-paper-1",
+      "commodity-35-c-valves-paper-3",
+      "commodity-36-a-dryers-paper-1",
+      "commodity-37-c-agitators-paper-3",
+      "commodity-18-conveyor-systems-scope-18-paper-2"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-01-c-steel-plates-sheets-strips-flats-coils-skelps-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-02-a-steel-bars-rods-wire-wire-rods-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Bars / Rods / Wire / Wire Rods",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-03-a-steel-structure-items-sections-beams-columns-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Structure Items / Sections / Beams / Columns",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-04-a-steel-billet-blooms-slabs-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Billet / Blooms / Slabs",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-05-b-steel-forging-flanges-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Forging / Flanges",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-06-a-steel-fittings-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Fittings",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-07-c-steel-casting-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Casting",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Tubes / Pipes / Line Pipes",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-09-a-welding-rods-electrodes-and-filler-metals-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Welding Rods, Electrodes and Filler Metals",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-10-c-pressure-vessel-items-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Pressure Vessel / Items",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-11-c-heat-exchanger-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Heat Exchanger",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-12-b-piping-and-pipe-spool-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Piping and Pipe Spool",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-13-b-skids-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Skids",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-14-a-storage-tank-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Storage Tank",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-15-b-fabricated-steel-structure-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fabricated Steel Structure",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-16-b-gas-cylinders-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Gas Cylinders",
+        "scheduledSlot": "15:30–16:00"
+      },
+      {
+        "quizId": "commodity-17-b-cascades-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Cascades",
+        "scheduledSlot": "11:00–11:30"
+      },
+      {
+        "quizId": "commodity-18-a-drill-through-equipment-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Drill-through Equipment",
+        "scheduledSlot": "16:00–16:30"
+      },
+      {
+        "quizId": "commodity-19-a-wellhead-tree-equipment-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Wellhead & Tree Equipment",
+        "scheduledSlot": "11:30–12:00"
+      },
+      {
+        "quizId": "commodity-20-b-fired-heaters-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fired Heaters",
+        "scheduledSlot": "16:30–17:00"
+      },
+      {
+        "quizId": "commodity-21-c-petroleum-gas-dispenser-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Petroleum & Gas Dispenser",
+        "scheduledSlot": "12:00–12:30"
+      },
+      {
+        "quizId": "commodity-22-b-bolts-nuts-stud-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694990,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Bolts / Nuts / Stud",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-23-b-pumps-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Pumps",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-24-b-compressors-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Compressors",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-25-c-fans-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Fans",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-26-c-blowers-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Blowers",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-27-a-gear-box-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Gear Box",
+        "scheduledSlot": "15:00–15:30"
+      },
+      {
+        "quizId": "commodity-28-c-utm-machine-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "UTM Machine",
+        "scheduledSlot": "10:30–11:00"
+      },
+      {
+        "quizId": "commodity-29-c-hardness-test-machines-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Hardness Test Machines",
+        "scheduledSlot": "15:30–16:00"
+      },
+      {
+        "quizId": "commodity-30-a-impact-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Impact Test Machines",
+        "scheduledSlot": "11:00–11:30"
+      },
+      {
+        "quizId": "commodity-31-a-cooling-tower-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cooling Tower",
+        "scheduledSlot": "16:00–16:30"
+      },
+      {
+        "quizId": "commodity-32-b-cranes-lifting-equipment-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cranes / Lifting Equipment",
+        "scheduledSlot": "11:30–12:00"
+      },
+      {
+        "quizId": "commodity-33-c-machine-tools-dies-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Machine Tools / Dies",
+        "scheduledSlot": "16:30–17:00"
+      },
+      {
+        "quizId": "commodity-34-a-rotors-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Rotors",
+        "scheduledSlot": "12:00–12:30"
+      },
+      {
+        "quizId": "commodity-35-c-valves-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Valves",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-36-a-dryers-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Dryers",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-37-c-agitators-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Agitators",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-18-conveyor-systems-scope-18-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791193551015,
+        "assessmentDate": "2026-09-09",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Conveyor System",
+        "scheduledSlot": "09:00–09:30"
+      }
+    ],
+    "scope17Category": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+    "scope18Category": "Conveyor System"
+  },
+  {
+    "id": "u-sanjay-ev",
+    "name": "Sanjay EV",
+    "email": "sanjay.ev@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 17",
+    "assignedQuizIds": [
+      "commodity-01-c-steel-plates-sheets-strips-flats-coils-skelps-paper-3",
+      "commodity-02-c-steel-bars-rods-wire-wire-rods-paper-3",
+      "commodity-03-c-steel-structure-items-sections-beams-columns-paper-3",
+      "commodity-04-c-steel-billet-blooms-slabs-paper-3",
+      "commodity-05-c-steel-forging-flanges-paper-3",
+      "commodity-06-c-steel-fittings-paper-3",
+      "commodity-07-c-steel-casting-paper-3",
+      "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+      "commodity-09-b-welding-rods-electrodes-and-filler-metals-paper-2",
+      "commodity-10-a-pressure-vessel-items-paper-1",
+      "commodity-11-a-heat-exchanger-paper-1",
+      "commodity-12-c-piping-and-pipe-spool-paper-3",
+      "commodity-13-a-skids-paper-1",
+      "commodity-14-c-storage-tank-paper-3",
+      "commodity-15-b-fabricated-steel-structure-paper-2",
+      "commodity-16-c-gas-cylinders-paper-3",
+      "commodity-17-a-cascades-paper-1",
+      "commodity-18-b-drill-through-equipment-paper-2",
+      "commodity-19-c-wellhead-tree-equipment-paper-3",
+      "commodity-20-b-fired-heaters-paper-2",
+      "commodity-21-a-petroleum-gas-dispenser-paper-1",
+      "commodity-22-c-bolts-nuts-stud-paper-3",
+      "commodity-23-c-pumps-paper-3",
+      "commodity-24-c-compressors-paper-3",
+      "commodity-25-b-fans-paper-2",
+      "commodity-26-b-blowers-paper-2",
+      "commodity-27-a-gear-box-paper-1",
+      "commodity-28-c-utm-machine-paper-3",
+      "commodity-29-c-hardness-test-machines-paper-3",
+      "commodity-30-a-impact-test-machines-paper-1",
+      "commodity-31-b-cooling-tower-paper-2",
+      "commodity-32-c-cranes-lifting-equipment-paper-3",
+      "commodity-33-a-machine-tools-dies-paper-1",
+      "commodity-34-a-rotors-paper-1",
+      "commodity-35-b-valves-paper-2",
+      "commodity-36-c-dryers-paper-3",
+      "commodity-37-c-agitators-paper-3",
+      "commodity-18-conveyor-systems-scope-18-paper-3"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-01-c-steel-plates-sheets-strips-flats-coils-skelps-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-02-c-steel-bars-rods-wire-wire-rods-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Bars / Rods / Wire / Wire Rods",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-03-c-steel-structure-items-sections-beams-columns-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Structure Items / Sections / Beams / Columns",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-04-c-steel-billet-blooms-slabs-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Billet / Blooms / Slabs",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-05-c-steel-forging-flanges-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Forging / Flanges",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-06-c-steel-fittings-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Fittings",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-07-c-steel-casting-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Casting",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-08-a-steel-tubes-pipes-line-pipes-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Steel Tubes / Pipes / Line Pipes",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-09-b-welding-rods-electrodes-and-filler-metals-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Welding Rods, Electrodes and Filler Metals",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-10-a-pressure-vessel-items-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Pressure Vessel / Items",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-11-a-heat-exchanger-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Heat Exchanger",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-12-c-piping-and-pipe-spool-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Piping and Pipe Spool",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-13-a-skids-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Skids",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-14-c-storage-tank-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Storage Tank",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-15-b-fabricated-steel-structure-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fabricated Steel Structure",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-16-c-gas-cylinders-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Gas Cylinders",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-17-a-cascades-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Cascades",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-18-b-drill-through-equipment-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Drill-through Equipment",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-19-c-wellhead-tree-equipment-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Wellhead & Tree Equipment",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-20-b-fired-heaters-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Fired Heaters",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-21-a-petroleum-gas-dispenser-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Petroleum & Gas Dispenser",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-22-c-bolts-nuts-stud-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 17",
+        "scopeCategory": "Bolts / Nuts / Stud",
+        "scheduledSlot": "15:15–15:45"
+      },
+      {
+        "quizId": "commodity-23-c-pumps-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Pumps",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-24-c-compressors-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Compressors",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-25-b-fans-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Fans",
+        "scheduledSlot": "11:15–11:45"
+      },
+      {
+        "quizId": "commodity-26-b-blowers-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Blowers",
+        "scheduledSlot": "16:15–16:45"
+      },
+      {
+        "quizId": "commodity-27-a-gear-box-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Gear Box",
+        "scheduledSlot": "11:45–12:15"
+      },
+      {
+        "quizId": "commodity-28-c-utm-machine-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "UTM Machine",
+        "scheduledSlot": "16:45–17:15"
+      },
+      {
+        "quizId": "commodity-29-c-hardness-test-machines-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Hardness Test Machines",
+        "scheduledSlot": "12:15–12:45"
+      },
+      {
+        "quizId": "commodity-30-a-impact-test-machines-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Impact Test Machines",
+        "scheduledSlot": "17:15–17:45"
+      },
+      {
+        "quizId": "commodity-31-b-cooling-tower-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cooling Tower",
+        "scheduledSlot": "14:00–14:30"
+      },
+      {
+        "quizId": "commodity-32-c-cranes-lifting-equipment-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Cranes / Lifting Equipment",
+        "scheduledSlot": "09:30–10:00"
+      },
+      {
+        "quizId": "commodity-33-a-machine-tools-dies-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Machine Tools / Dies",
+        "scheduledSlot": "14:30–15:00"
+      },
+      {
+        "quizId": "commodity-34-a-rotors-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Rotors",
+        "scheduledSlot": "10:00–10:30"
+      },
+      {
+        "quizId": "commodity-35-b-valves-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Valves",
+        "scheduledSlot": "15:15–15:45"
+      },
+      {
+        "quizId": "commodity-36-c-dryers-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Dryers",
+        "scheduledSlot": "10:45–11:15"
+      },
+      {
+        "quizId": "commodity-37-c-agitators-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Agitators",
+        "scheduledSlot": "15:45–16:15"
+      },
+      {
+        "quizId": "commodity-18-conveyor-systems-scope-18-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791193551015,
+        "assessmentDate": "2026-09-09",
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 18",
+        "scopeCategory": "Conveyor System",
+        "scheduledSlot": "09:00–09:30"
+      }
+    ],
+    "scope17Category": "Steel Plates / Sheets / Strips / Flats / Coils / Skelps",
+    "scope18Category": "Conveyor System"
+  },
+  {
+    "id": "u-sudhakar-joshi",
+    "name": "Sudhakar Joshi",
+    "email": "sudhakar.joshi@dycgpl.com",
+    "password": "123456",
+    "role": "inspector",
+    "scopeSector": "NABCB IAF SCOPE 19",
+    "assignedQuizIds": [
+      "commodity-38-a-junction-box-distribution-box-paper-1",
+      "commodity-39-c-switch-gears-paper-3",
+      "commodity-40-b-switch-boards-paper-2",
+      "commodity-41-a-lt-motors-paper-1",
+      "commodity-42-c-control-panel-paper-3",
+      "commodity-43-c-solar-pv-modules-paper-3",
+      "commodity-44-a-solar-panel-system-and-batteries-paper-1",
+      "commodity-45-b-ups-paper-2",
+      "commodity-46-b-battery-paper-2",
+      "commodity-47-c-cable-trays-system-paper-3",
+      "commodity-48-a-electric-domestic-appliances-paper-1"
+    ],
+    "testAssignments": [
+      {
+        "quizId": "commodity-38-a-junction-box-distribution-box-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Junction Box / Distribution Box",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-39-c-switch-gears-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Switch Gears",
+        "scheduledSlot": "12:00–12:30"
+      },
+      {
+        "quizId": "commodity-40-b-switch-boards-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Switch Boards",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-41-a-lt-motors-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "LT Motors",
+        "scheduledSlot": "12:00–12:30"
+      },
+      {
+        "quizId": "commodity-42-c-control-panel-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Control Panel",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-43-c-solar-pv-modules-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Solar PV Modules",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-44-a-solar-panel-system-and-batteries-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Solar Panel System and Batteries",
+        "scheduledSlot": "12:00–12:30"
+      },
+      {
+        "quizId": "commodity-45-b-ups-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "UPS",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-46-b-battery-paper-2",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Battery",
+        "scheduledSlot": "12:00–12:30"
+      },
+      {
+        "quizId": "commodity-47-c-cable-trays-system-paper-3",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Cable Trays System",
+        "scheduledSlot": "10:15–10:45"
+      },
+      {
+        "quizId": "commodity-48-a-electric-domestic-appliances-paper-1",
+        "conductedBy": "Technical Manager",
+        "assignedAt": 1791026694991,
+        "durationMinutes": 30,
+        "scopeSector": "NABCB IAF SCOPE 19",
+        "scopeCategory": "Electric Domestic Appliances",
+        "scheduledSlot": "12:00–12:30"
+      }
+    ],
+    "scope19Category": "Junction Box / Distribution Box"
+  }
+]
