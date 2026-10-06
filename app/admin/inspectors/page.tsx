@@ -90,20 +90,24 @@ function InspectorInformation() {
     setMessage(null)
   }
 
-  function saveInformation() {
+  async function saveInformation() {
     if (!selectedUser || !name.trim() || !designation.trim()) {
       setMessage('Complete the inspector name and designation.')
       return
     }
-    updateUser(selectedUser.id, {
-      name: name.trim(),
-      inspectorId: inspectorId.trim() || undefined,
-      inspectorSignature: inspectorSignature || null,
-      designation: designation.trim(),
-      department: department.trim() || undefined,
-      location: location.trim() || undefined,
-    })
-    setMessage('Inspector information saved.')
+    try {
+      await updateUser(selectedUser.id, {
+        name: name.trim(),
+        inspectorId: inspectorId.trim() || undefined,
+        inspectorSignature: inspectorSignature || null,
+        designation: designation.trim(),
+        department: department.trim() || undefined,
+        location: location.trim() || undefined,
+      })
+      setMessage('Inspector information saved.')
+    } catch (error) {
+      setMessage(error instanceof Error ? `Inspector information could not be saved: ${error.message}` : 'Inspector information could not be saved.')
+    }
   }
 
   function selectQuiz(id: string) {
@@ -119,7 +123,7 @@ function InspectorInformation() {
     }
   }
 
-  function assignTest() {
+  async function assignTest() {
     if (!selectedUser || !selectedQuizId || !assessmentDate || !scopeSector) {
       setMessage('Select an inspector, scope sector, assessment date, and test.')
       return
@@ -134,32 +138,48 @@ function InspectorInformation() {
       ...(selectedUser.testAssignments ?? []).filter((assignment) => assignment.quizId !== selectedQuizId),
       { quizId: selectedQuizId, conductedBy: conductedBy.trim() || 'Technical Manager', evaluatorDesignation: evaluatorDesignation.trim() || undefined, assignedAt: Date.now(), assessmentDate, scopeSector },
     ]
-    updateUser(selectedUser.id, { assignedQuizIds, testAssignments })
-    setMessage('Test assigned successfully.')
+    try {
+      await updateUser(selectedUser.id, { assignedQuizIds, testAssignments })
+      setMessage('Test assigned successfully.')
+    } catch (error) {
+      setMessage(error instanceof Error ? `Test assignment could not be saved: ${error.message}` : 'Test assignment could not be saved.')
+    }
   }
 
-  function removeAssignment(quizId: string) {
+  async function removeAssignment(quizId: string) {
     if (!selectedUser) return
-    updateUser(selectedUser.id, {
-      assignedQuizIds: (selectedUser.assignedQuizIds ?? []).filter((id) => id !== quizId),
-      testAssignments: (selectedUser.testAssignments ?? []).filter((assignment) => assignment.quizId !== quizId),
-    })
-    setMessage('Assignment removed.')
+    try {
+      await updateUser(selectedUser.id, {
+        assignedQuizIds: (selectedUser.assignedQuizIds ?? []).filter((id) => id !== quizId),
+        testAssignments: (selectedUser.testAssignments ?? []).filter((assignment) => assignment.quizId !== quizId),
+      })
+      setMessage('Assignment removed.')
+    } catch (error) {
+      setMessage(error instanceof Error ? `Assignment could not be removed: ${error.message}` : 'Assignment could not be removed.')
+    }
   }
 
-  function assignTraining() {
+  async function assignTraining() {
     if (!selectedUser || !selectedTrainingId) {
       setMessage('Select an inspector and a training resource first.')
       return
     }
-    updateUser(selectedUser.id, { assignedTrainingIds: Array.from(new Set([...(selectedUser.assignedTrainingIds ?? []), selectedTrainingId])) })
-    setMessage('Training assigned successfully.')
+    try {
+      await updateUser(selectedUser.id, { assignedTrainingIds: Array.from(new Set([...(selectedUser.assignedTrainingIds ?? []), selectedTrainingId])) })
+      setMessage('Training assigned successfully.')
+    } catch (error) {
+      setMessage(error instanceof Error ? `Training assignment could not be saved: ${error.message}` : 'Training assignment could not be saved.')
+    }
   }
 
-  function removeTrainingAssignment(trainingId: string) {
+  async function removeTrainingAssignment(trainingId: string) {
     if (!selectedUser) return
-    updateUser(selectedUser.id, { assignedTrainingIds: (selectedUser.assignedTrainingIds ?? []).filter((id) => id !== trainingId) })
-    setMessage('Training assignment removed.')
+    try {
+      await updateUser(selectedUser.id, { assignedTrainingIds: (selectedUser.assignedTrainingIds ?? []).filter((id) => id !== trainingId) })
+      setMessage('Training assignment removed.')
+    } catch (error) {
+      setMessage(error instanceof Error ? `Training assignment could not be removed: ${error.message}` : 'Training assignment could not be removed.')
+    }
   }
 
   async function deleteFootage(session: typeof proctoringSessions[number]) {

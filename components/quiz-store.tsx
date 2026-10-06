@@ -71,7 +71,7 @@ interface QuizContextValue {
   login: (email: string, password: string) => { ok: boolean; error?: string }
   resetAdminPassword: (password: string) => { ok: boolean; error?: string }
   createAccount: (name: string, email: string, password: string, role: 'inspector' | 'tc_qa') => { ok: boolean; error?: string }
-  updateUser: (id: string, updates: Partial<User>) => void
+  updateUser: (id: string, updates: Partial<User>) => Promise<void>
   deleteUser: (id: string) => { ok: boolean; error?: string }
   changeUserPassword: (id: string, password: string) => { ok: boolean; error?: string }
   logout: () => void
@@ -343,16 +343,20 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
     [currentUser, users],
   )
 
-  const updateUser = useCallback((id: string, updates: Partial<User>) => {
+  const updateUser = useCallback(async (id: string, updates: Partial<User>) => {
     const user = users.find((item) => item.id === id)
     if (user?.role === 'inspector') {
       const profile = toSharedInspectorProfile({ ...user, ...updates })
       if (profile) {
-        void fetch('/api/inspector-profiles', {
+        const response = await fetch('/api/inspector-profiles', {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ profile }),
-        }).catch(() => undefined)
+        })
+        const payload = await response.json() as { error?: string }
+        if (!response.ok) {
+          throw new Error(payload.error ?? 'Inspector information could not be saved.')
+        }
       }
     }
     setUsers((prev) => prev.map((user) => user.id === id ? { ...user, ...updates } : user))

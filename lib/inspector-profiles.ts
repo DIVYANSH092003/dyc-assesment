@@ -1,51 +1,60 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import path from 'node:path'
 import type { SharedInspectorProfile } from './inspector-profile-shared'
+import { createSupabaseAdminClient, throwStorageError } from './supabase-admin'
 
-interface InspectorProfileStore {
-  profiles: SharedInspectorProfile[]
-}
-
-const storePath = path.join(process.cwd(), 'data', 'inspector-profiles.json')
-let mutationQueue = Promise.resolve()
-
-async function readStore(): Promise<InspectorProfileStore> {
-  try {
-    return JSON.parse(await readFile(storePath, 'utf8')) as InspectorProfileStore
-  } catch {
-    return { profiles: [] }
-  }
-}
-
-function withMutation<T>(operation: () => Promise<T>) {
-  const result = mutationQueue.then(operation, operation)
-  mutationQueue = result.then(() => undefined, () => undefined)
-  return result
+interface StoredInspectorProfile {
+  id: string
+  email: string
+  profile: SharedInspectorProfile
 }
 
 export async function listInspectorProfiles() {
-  return (await readStore()).profiles
+  const supabase = createSupabaseAdminClient()
+  const { data, error } = await supabase
+    .from('inspector_profiles')
+    .select('profile')
+    .order('email', { ascending: true })
+  if (error) throwStorageError(error)
+  return data.map((row) => row.profile)
 }
 
 export async function saveInspectorProfiles(profiles: SharedInspectorProfile[]) {
-  return withMutation(async () => {
-    const store = await readStore()
-    const savedProfiles = [...store.profiles]
-    for (const profile of profiles) {
-      const index = savedProfiles.findIndex((saved) => saved.id === profile.id || saved.email.toLowerCase() === profile.email.toLowerCase())
-      if (index === -1) savedProfiles.push(profile)
-      else {
-        const existing = savedProfiles[index]
-        savedProfiles[index] = {
-          ...profile,
-          inspectorSignature: profile.inspectorSignature === undefined
-            ? existing.inspectorSignature
-            : profile.inspectorSignature,
-        }
-      }
+  const supabase = createSupabaseAdminClient()
+  const savedProfiles: SharedInspectorProfile[] = []
+
+  for (const profile of profiles) {
+    const { data: byId, error: idError } = await supabase
+      .from('inspector_profiles')
+      .select('id, email, profile')
+      .eq('id', profile.id)
+      .maybeSingle()
+    if (idError) throwStorageError(idError)
+
+    const { data: byEmail, error: emailError } = byId
+      ? { data: null, error: null }
+      : await supabase
+        .from('inspector_profiles')
+        .select('id, email, profile')
+        .eq('email', profile.email)
+        .maybeSingle()
+    if (emailError) throwStorageError(emailError)
+
+    const existing = (byId ?? byEmail) as StoredInspectorProfile | null
+    const mergedProfile: SharedInspectorProfile = {
+      ...profile,
+      inspectorSignature: profile.inspectorSignature === undefined
+        ? existing?.profile.inspectorSignature
+        : profile.inspectorSignature,
     }
-    await mkdir(path.dirname(storePath), { recursive: true })
-    await writeFile(storePath, JSON.stringify({ profiles: savedProfiles }, null, 2), 'utf8')
-    return savedProfiles
-  })
+    const { error: saveError } = await supabase
+      .from('inspector_profiles')
+      .upsert({
+        id: existing?.id ?? profile.id,
+        email: profile.email,
+        profile: mergedProfile,
+      }, { onConflict: 'id' })
+    if (saveError) throwStorageError(saveError)
+    savedProfiles.push(mergedProfile)
+  }
+
+  return savedProfiles
 }

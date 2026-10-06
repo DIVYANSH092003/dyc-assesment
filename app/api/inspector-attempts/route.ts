@@ -1,5 +1,6 @@
 import { listAttempts, startInspectorAttempt, submitInspectorAttempt } from '@/lib/inspector-attempts'
 import { seedUsers } from '@/lib/sample-data'
+import { PersistentStorageError } from '@/lib/supabase-admin'
 import type { Quiz } from '@/lib/types'
 
 export const runtime = 'nodejs'
@@ -8,7 +9,14 @@ export async function GET(request: Request) {
   const url = new URL(request.url)
   const userId = url.searchParams.get('userId')
   if (!userId) return Response.json({ error: 'Inspector ID is required.' }, { status: 400 })
-  return Response.json({ attempts: await listAttempts(userId, url.searchParams.get('quizId') ?? undefined) })
+  try {
+    return Response.json({ attempts: await listAttempts(userId, url.searchParams.get('quizId') ?? undefined) })
+  } catch (error) {
+    const message = error instanceof PersistentStorageError
+      ? error.message
+      : 'Assessment history could not be loaded from persistent storage.'
+    return Response.json({ error: message }, { status: 503 })
+  }
 }
 
 export async function POST(request: Request) {
@@ -37,6 +45,9 @@ export async function POST(request: Request) {
     }
     return Response.json({ error: 'Invalid inspector attempt request.' }, { status: 400 })
   } catch (error) {
+    if (error instanceof PersistentStorageError) {
+      return Response.json({ error: error.message }, { status: 503 })
+    }
     return Response.json({ error: error instanceof Error ? error.message : 'The inspector attempt could not be processed.' }, { status: 409 })
   }
 }
