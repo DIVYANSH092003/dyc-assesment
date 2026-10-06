@@ -6,7 +6,7 @@ import { Badge, Card, Select } from '@/components/ui-kit'
 import { Button } from '@/components/ui/button'
 import { useQuizStore } from '@/components/quiz-store'
 import { ProctoringPanel } from '@/components/admin/proctoring-panel'
-import type { Scope17Category, Scope18Category, Scope19Category, Scope28Category, ScopeSector } from '@/lib/types'
+import type { ScopeSector } from '@/lib/types'
 
 const scopeSectors: ScopeSector[] = [
   'NABCB IAF SCOPE 17',
@@ -18,30 +18,19 @@ const scopeSectors: ScopeSector[] = [
   'Other',
 ]
 
-const scopeCategories: Record<ScopeSector, string[]> = {
-  'NABCB IAF SCOPE 17': [
-    'Steel Plates / Sheets / Strips / Flats / Coils', 'Steel Bars / Rods / Wire',
-    'Steel Structure Items / Sections', 'Steel Billet / Blooms', 'Steel Forging / Flanges',
-    'Steel Fittings', 'Steel Casting', 'Steel Tubes / Pipes / Line Pipes',
-    'Welding Rods, Electrodes and Filler Metals', 'Pressure Vessel / Items', 'Heat Exchanger',
-    'Piping and Pipe Spool', 'Skids', 'Storage Tank', 'Fabricated Steel Structure',
-    'Gas Cylinders', 'Cylinder Cascade', 'Petroleum Gas Dispenser',
-    'Un-Pressurized Vessels / Items', 'Drill-through Equipment', 'Wellhead & Tree Equipment',
-    'Fired Heaters', 'Bolts / Nuts / Stud', 'Fabricated Items',
-  ] satisfies Scope17Category[],
-  'NABCB IAF SCOPE 18': [
-    'Pump', 'Compressors', 'Fans and Blowers', 'Gear Box',
-    'Calibration & Measuring & Testing Equipment', 'Cooling Tower', 'Cranes / Lifting Equipments',
-    'Conveyor System', 'Machine Tools / Dies', 'Rotors', 'Valves', 'Dryers', 'Agitators',
-    'Appliances', 'HVAC', 'Junction Box / Distribution Box', 'Switch Gears', 'Switch Boards',
-    'LT Motors', 'Control Panel', 'Solar PV Modules', 'Solar Panel System', 'UPS', 'Battery',
-    'Cable Trays System',
-  ] satisfies Scope18Category[],
-  'NABCB IAF SCOPE 19': ['Electric Domestic Appliances'] satisfies Scope19Category[],
-  'NABCB IAF SCOPE 28': ['Building Construction'] satisfies Scope28Category[],
-  'NABCB IAF SCOPE 17 & 18': ['Quality Assurance', 'Laboratory Tests', 'Welding & Brazing Qualification and Inspection', 'RTFI', 'UT', 'PT', 'MPI', 'VT', 'Leak Testing', 'Vacuum Box Test'],
-  Coating: ['Coating'],
-  Other: ['Other'],
+function normalizeScopeValue(value: string) {
+  return value.trim().replace(/\s+/g, ' ').toLowerCase()
+}
+
+function matchesScopeSector(quizSector: string | undefined, selectedSector: string) {
+  if (!quizSector) return true
+  const normalizedQuizSector = normalizeScopeValue(quizSector)
+  const normalizedSelectedSector = normalizeScopeValue(selectedSector)
+  if (normalizedQuizSector === normalizedSelectedSector) return true
+
+  const quizScopes = normalizedQuizSector.match(/nabcb iaf scope \d+/g)
+  const selectedScopes = normalizedSelectedSector.match(/nabcb iaf scope \d+/g)
+  return Boolean(quizScopes?.some((scope) => selectedScopes?.includes(scope)))
 }
 
 export default function AdminInspectorsPage() {
@@ -69,37 +58,20 @@ function InspectorInformation() {
   const [department, setDepartment] = useState(initialUser?.department ?? '')
   const [location, setLocation] = useState(initialUser?.location ?? '')
   const [scopeSector, setScopeSector] = useState<ScopeSector | ''>(initialUser?.scopeSector ?? '')
-  const [scopeCategory, setScopeCategory] = useState(initialUser?.scope17Category ?? initialUser?.scope18Category ?? initialUser?.scope19Category ?? initialUser?.scope28Category ?? '')
   const [assessmentDate, setAssessmentDate] = useState('')
   const [message, setMessage] = useState<string | null>(null)
 
   const selectedUser = people.find((user) => user.id === selectedUserId)
-  const selectedQuiz = quizzes.find((quiz) => quiz.id === selectedQuizId)
-  const scheduledCategories = scopeSector
-    ? Array.from(new Set(users.flatMap((user) => user.testAssignments ?? [])
-      .filter((assignment) => assignment.scopeSector === scopeSector && assignment.scopeCategory)
-      .map((assignment) => assignment.scopeCategory as string)))
-    : []
-  const quizCategories = scopeSector
-    ? quizzes
-      .filter((quiz) => !quiz.scopeSector || quiz.scopeSector === scopeSector)
-      .map((quiz) => quiz.category.trim())
-      .filter(Boolean)
-    : []
-  const selectedCategories = scopeSector
-    ? Array.from(new Set([
-      ...scopeCategories[scopeSector],
-      ...scheduledCategories,
-      ...quizCategories,
-      selectedQuiz?.category ?? '',
-      scopeCategory,
-    ].filter(Boolean)))
-    : []
+  const availableScopeSectors = Array.from(new Set([
+    ...scopeSectors,
+    ...users.map((user) => user.scopeSector ?? ''),
+    ...users.flatMap((user) => (user.testAssignments ?? []).map((assignment) => assignment.scopeSector ?? '')),
+    ...quizzes.map((quiz) => quiz.scopeSector ?? ''),
+  ].map((sector) => sector.trim()).filter(Boolean))).sort((first, second) => first.localeCompare(second))
   const availableTests = quizzes
     .filter(
       (quiz) => (quiz.targetRole ?? 'inspector') === selectedUser?.role
-      && (!scopeSector || !quiz.scopeSector || quiz.scopeSector === scopeSector)
-      && (!scopeCategory || quiz.category.toLowerCase() === scopeCategory.toLowerCase()),
+      && (!scopeSector || matchesScopeSector(quiz.scopeSector, scopeSector))
     )
     .sort((first, second) => first.title.localeCompare(second.title))
 
@@ -114,7 +86,6 @@ function InspectorInformation() {
     setDepartment(user?.department ?? '')
     setLocation(user?.location ?? '')
     setScopeSector(user?.scopeSector ?? '')
-    setScopeCategory(user?.scope17Category ?? user?.scope18Category ?? user?.scope19Category ?? user?.scope28Category ?? '')
     setAssessmentDate('')
     setMessage(null)
   }
@@ -142,28 +113,26 @@ function InspectorInformation() {
     if (assignment) {
       setAssessmentDate(assignment.assessmentDate ?? '')
       setScopeSector(assignment.scopeSector ?? quiz?.scopeSector ?? '')
-      setScopeCategory(assignment.scopeCategory ?? quiz?.category ?? '')
     } else {
       setAssessmentDate('')
       setScopeSector(quiz?.scopeSector ?? scopeSector)
-      setScopeCategory(quiz?.category ?? scopeCategory)
     }
   }
 
   function assignTest() {
-    if (!selectedUser || !selectedQuizId || !assessmentDate || !scopeSector || !scopeCategory) {
-      setMessage('Select an inspector, sector, category, assessment date, and test.')
+    if (!selectedUser || !selectedQuizId || !assessmentDate || !scopeSector) {
+      setMessage('Select an inspector, scope sector, assessment date, and test.')
       return
     }
     if (!availableTests.some((quiz) => quiz.id === selectedQuizId)) {
-      setMessage('That test is no longer available for the selected scope and category. Choose a test from the current list.')
+      setMessage('That test is no longer available for the selected scope sector. Choose a test from the current list.')
       setSelectedQuizId('')
       return
     }
     const assignedQuizIds = Array.from(new Set([...(selectedUser.assignedQuizIds ?? []), selectedQuizId]))
     const testAssignments = [
       ...(selectedUser.testAssignments ?? []).filter((assignment) => assignment.quizId !== selectedQuizId),
-      { quizId: selectedQuizId, conductedBy: conductedBy.trim() || 'Technical Manager', evaluatorDesignation: evaluatorDesignation.trim() || undefined, assignedAt: Date.now(), assessmentDate, scopeSector, scopeCategory },
+      { quizId: selectedQuizId, conductedBy: conductedBy.trim() || 'Technical Manager', evaluatorDesignation: evaluatorDesignation.trim() || undefined, assignedAt: Date.now(), assessmentDate, scopeSector },
     ]
     updateUser(selectedUser.id, { assignedQuizIds, testAssignments })
     setMessage('Test assigned successfully.')
@@ -297,39 +266,38 @@ function InspectorInformation() {
           </label>
           <label className="flex flex-col gap-1.5">
             <span className="text-sm font-semibold">Scope sector</span>
-            <Select value={scopeSector} onChange={(event) => { setScopeSector(event.target.value as ScopeSector); setScopeCategory(''); setSelectedQuizId('') }}>
-              <option value="">Select scope sector</option>
-              {scopeSectors.map((sector) => <option key={sector} value={sector}>{sector}</option>)}
-            </Select>
+            <input
+              className="h-11 rounded-xl border border-border bg-background px-3 text-sm"
+              list="assignment-scope-sectors"
+              value={scopeSector}
+              onChange={(event) => { setScopeSector(event.target.value); setSelectedQuizId('') }}
+              placeholder="Select or type a scope sector"
+            />
+            <datalist id="assignment-scope-sectors">
+              {availableScopeSectors.map((sector) => <option key={sector} value={sector} />)}
+            </datalist>
           </label>
-          {scopeSector && <label className="flex flex-col gap-1.5">
-            <span className="text-sm font-semibold">Scope category</span>
-            <Select value={scopeCategory} onChange={(event) => { setScopeCategory(event.target.value); setSelectedQuizId('') }}>
-              <option value="">Select scope category</option>
-              {selectedCategories.map((category, index) => <option key={category} value={category}>{index + 1}. {category}</option>)}
-            </Select>
-          </label>}
           <label className="flex flex-col gap-1.5">
             <span className="text-sm font-semibold">Date of Assessment</span>
             <input className="h-11 rounded-xl border border-border bg-background px-3 text-sm" type="date" value={assessmentDate} onChange={(event) => setAssessmentDate(event.target.value)} />
           </label>
           <label className="flex flex-col gap-1.5">
             <span className="text-sm font-semibold">Test</span>
-            <Select value={selectedQuizId} onChange={(event) => selectQuiz(event.target.value)} disabled={!scopeCategory || !selectedUser}>
+            <Select value={selectedQuizId} onChange={(event) => selectQuiz(event.target.value)} disabled={!scopeSector || !selectedUser}>
               <option value="">
                 {!selectedUser
                   ? 'Select an inspector first'
-                  : !scopeCategory
-                    ? 'Select a category first'
+                  : !scopeSector
+                    ? 'Select a scope sector first'
                     : availableTests.length
-                      ? 'Select a test for this category'
-                      : 'No tests available for this category'}
+                      ? 'Select a test for this scope sector'
+                      : 'No tests available for this scope sector'}
               </option>
               {availableTests.map((quiz) => <option key={quiz.id} value={quiz.id}>{quiz.title}</option>)}
             </Select>
-            {scopeCategory && availableTests.length > 0 && (
+            {scopeSector && availableTests.length > 0 && (
               <span className="text-xs text-muted-foreground">
-                {availableTests.length} {availableTests.length === 1 ? 'test' : 'tests'} available. New tests appear here automatically when they match this scope and category.
+                {availableTests.length} {availableTests.length === 1 ? 'test' : 'tests'} available for this scope sector.
               </span>
             )}
           </label>
@@ -394,7 +362,7 @@ function InspectorInformation() {
                 const assignment = selectedUser.testAssignments?.find((item) => item.quizId === quiz.id)
                 return (
                   <li key={quiz.id} className="flex items-center justify-between gap-3 py-3">
-                    <span className="min-w-0 text-sm font-medium">{quiz.title}<span className="block text-xs font-normal text-muted-foreground">{assignment?.scopeSector ?? selectedUser.scopeSector ?? 'Scope not set'} · {assignment?.scopeCategory ?? quiz.category}</span><span className="block text-xs font-normal text-muted-foreground">{assignment?.assessmentDate ?? 'Date not set'} · {assignment?.scheduledSlot ? `${assignment.scheduledSlot} · ` : ''}{assignment?.durationMinutes ?? quiz.durationMinutes} min</span><span className="block text-xs font-normal text-muted-foreground">Conducted by: {assignment?.conductedBy ?? 'Technical Manager'} · Conductor Designation: {assignment?.evaluatorDesignation ?? 'Not provided'}</span></span>
+                    <span className="min-w-0 text-sm font-medium">{quiz.title}<span className="block text-xs font-normal text-muted-foreground">{assignment?.scopeSector ?? selectedUser.scopeSector ?? 'Scope not set'}</span><span className="block text-xs font-normal text-muted-foreground">{assignment?.assessmentDate ?? 'Date not set'} · {assignment?.scheduledSlot ? `${assignment.scheduledSlot} · ` : ''}{assignment?.durationMinutes ?? quiz.durationMinutes} min</span><span className="block text-xs font-normal text-muted-foreground">Conducted by: {assignment?.conductedBy ?? 'Technical Manager'} · Conductor Designation: {assignment?.evaluatorDesignation ?? 'Not provided'}</span></span>
                     <Button variant="ghost" size="sm" onClick={() => removeAssignment(quiz.id)}>Remove</Button>
                   </li>
                 )

@@ -13,7 +13,7 @@ import { AuthGate } from '@/components/auth-gate'
 import { Badge, Card } from '@/components/ui-kit'
 import { Button } from '@/components/ui/button'
 import { useQuizStore } from '@/components/quiz-store'
-import { getEvaluation } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation } from '@/lib/evaluation'
 import { useState } from 'react'
 
 export default function AdminDashboardPage() {
@@ -108,7 +108,7 @@ function Dashboard() {
                     <p className="truncate text-xs text-muted-foreground">{a.quizTitle}</p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-semibold">{getEvaluation(a.percentage).score.toFixed(1)}/10 · {getEvaluation(a.percentage).grade}</span>
+                    <span className="text-sm font-semibold">{getEvaluation(a.percentage).score.toFixed(1)}/10 · {formatAuthorizationGrade(getAuthorizationGrade(a.percentage, a.recordedGrade))}</span>
                     <Badge tone={a.passed ? 'success' : 'danger'}>
                       {a.passed ? 'Pass' : 'Fail'}
                     </Badge>

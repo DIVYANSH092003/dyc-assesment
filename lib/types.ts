@@ -1,6 +1,6 @@
 export type Role = 'admin' | 'inspector' | 'tc_qa'
 
-export type ScopeSector = 'NABCB IAF SCOPE 17' | 'NABCB IAF SCOPE 18' | 'NABCB IAF SCOPE 17 & 18' | 'NABCB IAF SCOPE 19' | 'NABCB IAF SCOPE 28' | 'Coating' | 'Other'
+export type ScopeSector = 'NABCB IAF SCOPE 17' | 'NABCB IAF SCOPE 18' | 'NABCB IAF SCOPE 17 & 18' | 'NABCB IAF SCOPE 19' | 'NABCB IAF SCOPE 28' | 'Coating' | 'Other' | (string & {})
 export type Scope17Category = string
 export type Scope18Category = string
 export type Scope19Category = string

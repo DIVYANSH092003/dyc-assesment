@@ -5,7 +5,7 @@ import { Clock, HelpCircle, Target } from 'lucide-react'
 import { Badge, Card } from '@/components/ui-kit'
 import { Button } from '@/components/ui/button'
 import { useQuizStore } from '@/components/quiz-store'
-import { getEvaluation, getRetakeAvailableAt } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation, getRetakeAvailableAt } from '@/lib/evaluation'
 
 export function InspectorDashboard() {
   const { quizzes, attempts, currentUser } = useQuizStore()
@@ -90,7 +90,7 @@ export function InspectorDashboard() {
 
                 <div className="mt-auto flex items-center justify-between gap-2 border-t border-border pt-4">
                   <span className="text-xs text-muted-foreground">
-                    {passed ? `Grade ${evaluation?.grade} · Competent` : waitingForRetake && retakeAvailableAt ? `Retake available ${new Date(retakeAvailableAt).toLocaleDateString()}` : evaluation ? `Grade ${evaluation.grade} · ${evaluation.score.toFixed(1)}/10` : 'Not attempted'}
+                    {passed ? `Grade ${evaluation?.grade} · Competent` : waitingForRetake && retakeAvailableAt ? `Retake available ${new Date(retakeAvailableAt).toLocaleDateString()}` : evaluation ? `Authorization grade ${formatAuthorizationGrade(getAuthorizationGrade(evaluation.score * 10))} · ${evaluation.score.toFixed(1)}/10` : 'Not attempted'}
                   </span>
                   {!passed && !waitingForRetake && <Button render={<Link href={`/quiz/${quiz.id}`} />} nativeButton={false} size="sm">{mine.length ? 'Retake' : 'Start test'}</Button>}
                 </div>
@@ -102,4 +102,3 @@ export function InspectorDashboard() {
     </div>
   )
 }
-

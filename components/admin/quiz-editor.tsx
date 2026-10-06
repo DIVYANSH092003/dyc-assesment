@@ -93,9 +93,15 @@ const typeLabels: Record<QuestionType, string> = {
 }
 
 export function QuizEditor({ existing }: { existing?: Quiz }) {
-  const { saveQuiz } = useQuizStore()
+  const { saveQuiz, quizzes } = useQuizStore()
   const router = useRouter()
   const importInputRef = useRef<HTMLInputElement>(null)
+  const existingCategories = Array.from(new Set(
+    quizzes
+      .filter((item) => item.id !== existing?.id)
+      .map((item) => item.category.trim())
+      .filter(Boolean),
+  )).sort((first, second) => first.localeCompare(second))
 
   const [quiz, setQuiz] = useState<Quiz>(
     existing ?? {
@@ -302,28 +308,34 @@ export function QuizEditor({ existing }: { existing?: Quiz }) {
         </div>
         <div className="flex flex-col gap-1.5 sm:max-w-md">
           <Label>Scope sector</Label>
-          <Select
+          <TextInput
+            list="quiz-scope-sectors"
             value={quiz.scopeSector ?? ''}
-            onChange={(e) => patch({ scopeSector: e.target.value ? e.target.value as NonNullable<Quiz['scopeSector']> : undefined })}
-          >
-            <option value="">Not assigned</option>
-            <option value="NABCB IAF SCOPE 17">NABCB IAF SCOPE 17</option>
-            <option value="NABCB IAF SCOPE 18">NABCB IAF SCOPE 18</option>
-            <option value="NABCB IAF SCOPE 17 & 18">NABCB IAF SCOPE 17 &amp; 18</option>
-            <option value="NABCB IAF SCOPE 19">NABCB IAF SCOPE 19</option>
-            <option value="NABCB IAF SCOPE 28">NABCB IAF SCOPE 28</option>
-            <option value="Coating">Coating</option>
-            <option value="Other">Other</option>
-          </Select>
+            onChange={(e) => patch({ scopeSector: e.target.value.trim() || undefined })}
+            placeholder="Select or type a scope sector"
+          />
+          <datalist id="quiz-scope-sectors">
+            <option value="NABCB IAF SCOPE 17" />
+            <option value="NABCB IAF SCOPE 18" />
+            <option value="NABCB IAF SCOPE 17 & 18" />
+            <option value="NABCB IAF SCOPE 19" />
+            <option value="NABCB IAF SCOPE 28" />
+            <option value="Coating" />
+            <option value="Other" />
+          </datalist>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
-            <Label>Category</Label>
+            <Label>Technical / scope category (shown on answer sheet)</Label>
             <TextInput
+              list="quiz-category-options"
               value={quiz.category}
               onChange={(e) => patch({ category: e.target.value })}
-              placeholder="e.g. Recruitment"
+              placeholder="Select or type a technical / scope category"
             />
+            <datalist id="quiz-category-options">
+              {existingCategories.map((category) => <option key={category} value={category} />)}
+            </datalist>
           </div>
           <div className="flex flex-col gap-1.5">
             <Label>Time limit (minutes)</Label>
@@ -335,7 +347,7 @@ export function QuizEditor({ existing }: { existing?: Quiz }) {
             />
           </div>
         </div>
-        <p className="text-sm text-muted-foreground">Evaluation: 1–10 · A: 8–10 · B: 6–under 8 · C: 5–under 6 · Fail: under 5</p>
+        <p className="text-sm text-muted-foreground">Evaluation: 1–10 · A: 8–10 · B: 6–under 8 · C: 5–under 6 · W (Withdrawn): under 5</p>
         <div className="flex flex-col gap-1.5 sm:max-w-xs">
           <Label>Assessment audience</Label>
           <Select

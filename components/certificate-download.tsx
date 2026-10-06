@@ -3,7 +3,7 @@
 import { Download } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { Attempt, Role, User } from '@/lib/types'
-import { getEvaluation } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation } from '@/lib/evaluation'
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, (character) => ({
@@ -30,7 +30,7 @@ export function CertificateDownload({
     const submitted = new Date(attempt.submittedAt).toLocaleDateString('en-GB')
     const status = attempt.passed ? 'COMPETENT' : 'NOT COMPETENT'
     const evaluation = getEvaluation(attempt.percentage)
-    const grade = attempt.recordedGrade ?? evaluation.grade
+    const grade = formatAuthorizationGrade(getAuthorizationGrade(attempt.percentage, attempt.recordedGrade))
     const roleName = role === 'inspector' ? 'Inspector' : role === 'admin' ? 'Administrator' : 'TM / QA'
     const logoSrc = new URL('/dyc-logo.svg', window.location.origin).href
     const category = user?.scope17Category ?? user?.scope18Category ?? user?.scope19Category ?? user?.scope28Category
@@ -115,7 +115,7 @@ export function CertificateDownload({
       <p class="assessment">${escapeHtml(attempt.quizTitle)}</p>
       <div class="metrics">
         <div class="metric"><div class="value">${attempt.percentage}%</div><div class="label">Score</div></div>
-        <div class="metric"><div class="value">${evaluation.score.toFixed(1)} / 10</div><div class="label">Grade (${grade})</div></div>
+        <div class="metric"><div class="value">${evaluation.score.toFixed(1)} / 10</div><div class="label">Authorization grade (${grade})</div></div>
         <div class="metric"><div class="value">${attempt.score} / ${attempt.maxScore}</div><div class="label">Points</div></div>
         <div class="metric"><div class="value">${escapeHtml(submitted)}</div><div class="label">Date Completed</div></div>
       </div>

@@ -3,7 +3,7 @@
 import { Download } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { Attempt, Quiz, User } from '@/lib/types'
-import { getEvaluation } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation } from '@/lib/evaluation'
 
 export function getAssessmentTitle(title: string) {
   return title.replace(/\s*[-–—]?\s+paper\s+[123]\s*$/i, '').trim()
@@ -48,9 +48,9 @@ export function createAnswerSheetHtml({
   const formatDateTime = (timestamp?: number) => timestamp ? new Date(timestamp).toLocaleString('en-GB') : ''
   const finalStatus = finalAttempt.competencyStatus ?? (finalAttempt.passed ? 'COMPETENT' : 'IN PROGRESS')
   const evaluation = getEvaluation(finalAttempt.percentage)
-  const displayGrade = finalAttempt.recordedGrade ?? evaluation.grade
-  const competencyLabel = finalAttempt.passed ? `${finalStatus} (Grade ${displayGrade})` : finalStatus
-  const inspectorCategory = testAssignment?.scopeCategory ?? user?.scope17Category ?? user?.scope18Category ?? user?.scope19Category ?? user?.scope28Category
+  const displayGrade = formatAuthorizationGrade(getAuthorizationGrade(finalAttempt.percentage, finalAttempt.recordedGrade))
+  const competencyLabel = finalStatus
+  const answerSheetCategory = quiz.category || importedDetails?.topic || ''
   const inspectorScope = importedDetails?.iafScope ?? testAssignment?.scopeSector ?? user?.scopeSector ?? ''
   const reconstructedResponses = finalAttempt.questionResponsesSource === 'reconstructed-from-aggregate-score'
   const correctCount = quiz.questions.filter((question) => {
@@ -177,7 +177,7 @@ ${section(2, 'Assessment Details', [
 ].join(''))}
 ${section(3, 'Scope & Competency Details', [
   field('IAF Scope', inspectorScope),
-  field('Technical Category', importedDetails?.topic ?? inspectorCategory ?? quiz.category),
+  field('Technical Category', answerSheetCategory),
 ].join(''))}
 ${section(4, 'Applicable Codes / Standards / Specifications', field('Applicable references', 'As per accredited scope, latest editions of applicable codes and standards.'))}
 ${section(5, 'Assessment Rules & Passing Criteria', `<div class="score-grid">${summary('Total Questions', String(quiz.questions.length))}${summary('Total Marks', String(totalMarks))}${summary('Minimum Passing Criteria', `${quiz.passingScore}%`)}${summary('Negative Marking', 'No')}</div>`)}
@@ -222,9 +222,11 @@ export function AnswerSheetDownload({
   }
 
   return (
-    <Button type="button" variant="default" size="sm" className="gap-2 shadow-sm" onClick={downloadAnswerSheet}>
-      <Download className="h-4 w-4" />
-      Save answer sheet as PDF
-    </Button>
+    <div>
+      <Button type="button" variant="default" size="sm" className="gap-2 shadow-sm" onClick={downloadAnswerSheet}>
+        <Download className="h-4 w-4" />
+        Save answer sheet as PDF
+      </Button>
+    </div>
   )
 }

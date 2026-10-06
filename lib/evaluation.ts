@@ -1,9 +1,18 @@
-export type EvaluationGrade = 'A' | 'B' | 'C' | 'Fail'
+export type EvaluationGrade = 'A' | 'B' | 'C' | 'W'
 
 export function getEvaluation(percentage: number) {
   const score = percentage / 10
-  const grade: EvaluationGrade = score >= 8 ? 'A' : score >= 6 ? 'B' : score >= 5 ? 'C' : 'Fail'
+  const grade: EvaluationGrade = score >= 8 ? 'A' : score >= 6 ? 'B' : score >= 5 ? 'C' : 'W'
   return { score, grade }
+}
+
+export function getAuthorizationGrade(percentage: number, recordedGrade?: EvaluationGrade) {
+  if (percentage < 50) return 'W'
+  return recordedGrade ?? getEvaluation(percentage).grade
+}
+
+export function formatAuthorizationGrade(grade: EvaluationGrade) {
+  return grade === 'W' ? 'W (Withdrawn)' : grade
 }
 
 export function isPassingEvaluation(percentage: number) {

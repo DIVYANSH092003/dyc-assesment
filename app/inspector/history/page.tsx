@@ -8,7 +8,7 @@ import { Badge, Card } from '@/components/ui-kit'
 import { Button } from '@/components/ui/button'
 import { ResultSummary } from '@/components/candidate/result-summary'
 import { useQuizStore } from '@/components/quiz-store'
-import { getEvaluation } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation } from '@/lib/evaluation'
 
 export default function InspectorHistoryPage() {
   return (
@@ -65,7 +65,7 @@ function InspectorHistory() {
                     <p className="truncate text-sm font-medium">{attempt.quizTitle}</p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="font-heading text-sm font-bold">{getEvaluation(attempt.percentage).score.toFixed(1)}/10 · {getEvaluation(attempt.percentage).grade}</span>
+                    <span className="font-heading text-sm font-bold">{getEvaluation(attempt.percentage).score.toFixed(1)}/10 · {formatAuthorizationGrade(getAuthorizationGrade(attempt.percentage, attempt.recordedGrade))}</span>
                     <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   </div>
                 </button>

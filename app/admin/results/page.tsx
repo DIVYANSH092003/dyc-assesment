@@ -9,7 +9,7 @@ import { AuthGate } from '@/components/auth-gate'
 import { Badge, Card, Select } from '@/components/ui-kit'
 import { Button } from '@/components/ui/button'
 import { useQuizStore } from '@/components/quiz-store'
-import { getEvaluation } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation } from '@/lib/evaluation'
 
 export default function AdminResultsPage() {
   return (
@@ -122,7 +122,7 @@ function Results() {
           attempt.attemptNumber,
           `${attempt.score}/${attempt.maxScore}`,
           evaluation.score.toFixed(1),
-          attempt.recordedGrade ?? evaluation.grade,
+          formatAuthorizationGrade(getAuthorizationGrade(attempt.percentage, attempt.recordedGrade)),
           `${attempt.percentage}%`,
           attempt.passed ? 'Pass' : 'Fail',
           formatTime(attempt.timeSpent),
@@ -140,7 +140,7 @@ function Results() {
         'Attempt',
         'Score',
         'Evaluation out of 10',
-        'Grade',
+        'Authorization grade',
         'Percentage',
         'Result',
         'Time',
@@ -165,14 +165,14 @@ function Results() {
   }
 
   function exportCsv() {
-    const header = ['Inspector', 'Test', 'Score', 'Evaluation', 'Grade', 'Percentage', 'Result', 'Time', 'Submitted']
+    const header = ['Inspector', 'Test', 'Score', 'Evaluation', 'Authorization grade', 'Percentage', 'Result', 'Time', 'Submitted']
     const lines = filtered.map((a) =>
       [
         a.userName,
         a.quizTitle,
         `${a.score}/${a.maxScore}`,
         `${getEvaluation(a.percentage).score.toFixed(1)}/10`,
-        a.recordedGrade ?? getEvaluation(a.percentage).grade,
+        formatAuthorizationGrade(getAuthorizationGrade(a.percentage, a.recordedGrade)),
         `${a.percentage}%`,
         a.passed ? 'Pass' : 'Fail',
         formatTime(a.timeSpent),
@@ -312,7 +312,7 @@ function Results() {
                     <td className="px-5 py-3 font-medium">{a.userName}</td>
                     <td className="px-5 py-3 text-muted-foreground">{a.quizTitle}</td>
                     <td className="px-5 py-3">
-                      <span className="font-semibold">{getEvaluation(a.percentage).score.toFixed(1)}/10 · {a.recordedGrade ?? getEvaluation(a.percentage).grade}</span>
+                      <span className="font-semibold">{getEvaluation(a.percentage).score.toFixed(1)}/10 · {formatAuthorizationGrade(getAuthorizationGrade(a.percentage, a.recordedGrade))}</span>
                       <span className="text-muted-foreground">
                         {' '}({a.percentage}% · {a.score}/{a.maxScore})
                       </span>

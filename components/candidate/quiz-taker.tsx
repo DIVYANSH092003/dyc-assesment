@@ -12,7 +12,7 @@ import { ResultSummary } from '@/components/candidate/result-summary'
 import type { Attempt, Quiz } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { ProctoringIntro, ProctoringMonitor, saveProctoringRecording } from '@/components/proctoring'
-import { getEvaluation, getRetakeAvailableAt } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation, getRetakeAvailableAt } from '@/lib/evaluation'
 
 function formatClock(seconds: number) {
   const m = Math.floor(seconds / 60)
@@ -139,7 +139,7 @@ export function QuizTaker({ quiz }: { quiz: Quiz }) {
           </h1>
           <p className="text-sm text-muted-foreground">Your submission has been recorded.</p>
         </div>
-        <p className="text-sm font-semibold">Attempt {result.attemptNumber} · Grade {getEvaluation(result.percentage).grade} · {result.competencyStatus ?? (result.passed ? 'COMPETENT' : 'NOT COMPETENT')}</p>
+        <p className="text-sm font-semibold">Attempt {result.attemptNumber} · Authorization grade {formatAuthorizationGrade(getAuthorizationGrade(result.percentage, result.recordedGrade))} · {result.competencyStatus ?? (result.passed ? 'COMPETENT' : 'NOT COMPETENT')}</p>
         {!result.passed && <p className="text-sm text-muted-foreground">You may retake this assessment from {new Date(getRetakeAvailableAt(result.submittedAt)).toLocaleDateString()}.</p>}
         <ResultSummary attempt={result} quiz={quiz} user={currentUser ?? undefined} />
         <div className="flex gap-2">

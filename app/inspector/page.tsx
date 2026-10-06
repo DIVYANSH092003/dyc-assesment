@@ -5,7 +5,7 @@ import { AuthGate } from '@/components/auth-gate'
 import { Card } from '@/components/ui-kit'
 import { Button } from '@/components/ui/button'
 import { useQuizStore } from '@/components/quiz-store'
-import { getEvaluation, getRetakeAvailableAt } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation, getRetakeAvailableAt } from '@/lib/evaluation'
 
 export default function InspectorDashboardPage() {
   return (
@@ -64,7 +64,7 @@ function InspectorTests() {
               <Card key={quiz.id} className="flex flex-col gap-4">
                 <div>
                   <h3 className="font-heading text-base font-semibold leading-snug text-balance">{quiz.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{latest && evaluation ? `Evaluation: ${evaluation.score.toFixed(1)}/10 · Grade ${evaluation.grade}` : 'Evaluation: Not attempted'}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{latest && evaluation ? `Evaluation: ${evaluation.score.toFixed(1)}/10 · Authorization grade ${formatAuthorizationGrade(getAuthorizationGrade(latest.percentage, latest.recordedGrade))}` : 'Evaluation: Not attempted'}</p>
                   {latest && <p className="mt-1 text-sm font-semibold">Attempt {latest.attemptNumber} · {latest.passed ? 'Competent' : 'Not competent'}</p>}
                 </div>
                 <div className="mt-auto flex items-center justify-between gap-2 border-t border-border pt-4">

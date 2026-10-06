@@ -16,7 +16,9 @@
       "assignedQuizIds": [
         "q-aptitude",
         "commodity-09-b-welding-rods-electrodes-and-filler-metals-paper-2",
-        "commodity-11-a-heat-exchanger-paper-1"
+        "commodity-11-a-heat-exchanger-paper-1",
+        "quiz-tlj6e84",
+        "quiz-mf6j6rg"
       ],
       "testAssignments": [
         {
@@ -41,6 +43,21 @@
           "assessmentDate": "2026-10-09",
           "scopeSector": "NABCB IAF SCOPE 17",
           "scopeCategory": "Heat Exchanger"
+        },
+        {
+          "quizId": "quiz-tlj6e84",
+          "conductedBy": "Technical Manager",
+          "assignedAt": 1791269507777,
+          "assessmentDate": "2026-10-06",
+          "scopeSector": "NABCB IAF SCOPE 18"
+        },
+        {
+          "quizId": "quiz-mf6j6rg",
+          "conductedBy": "parag wadekar",
+          "evaluatorDesignation": "jkdfaksjdfnsad",
+          "assignedAt": 1791270162609,
+          "assessmentDate": "2026-10-06",
+          "scopeSector": "NABCB IAF SCOPE 19"
         }
       ]
     },

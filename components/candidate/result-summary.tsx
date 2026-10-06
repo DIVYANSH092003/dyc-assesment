@@ -5,7 +5,7 @@ import { CertificateDownload } from '@/components/certificate-download'
 import { Badge, Card } from '@/components/ui-kit'
 import { isCorrect } from '@/components/quiz-store'
 import type { Attempt, Quiz, Role, User } from '@/lib/types'
-import { getEvaluation } from '@/lib/evaluation'
+import { formatAuthorizationGrade, getAuthorizationGrade, getEvaluation } from '@/lib/evaluation'
 
 function formatTime(seconds: number) {
   const m = Math.floor(seconds / 60)
@@ -42,7 +42,7 @@ export function ResultSummary({
           {attempt.passed ? <Check className="h-8 w-8" /> : <X className="h-8 w-8" />}
         </span>
         <p className="font-heading text-4xl font-bold">{evaluation.score.toFixed(1)}/10</p>
-        <p className="font-semibold">Grade {attempt.recordedGrade ?? evaluation.grade}</p>
+        <p className="font-semibold">Authorization grade {formatAuthorizationGrade(getAuthorizationGrade(attempt.percentage, attempt.recordedGrade))}</p>
         <p className="text-sm text-muted-foreground">
           {attempt.percentage}% · {attempt.score} of {attempt.maxScore} points · {formatTime(attempt.timeSpent)}
         </p>
