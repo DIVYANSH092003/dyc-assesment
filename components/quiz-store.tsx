@@ -27,6 +27,28 @@ const timetableInspectors = inspectorTimetableData as unknown as User[]
 const TIMETABLE_IMPORT_VERSION = 2
 const importedInspectorResults = createImportedInspectorResults(timetableInspectors, commodityQuizzes)
 
+function mergePersistedQuizzes(savedQuizzes: Quiz[], removedIds: string[] = []) {
+  const removedCommodityQuizIds = new Set(removedIds)
+  const savedCommodityQuizzes = new Map(savedQuizzes
+    .filter((quiz) => commodityQuizIds.has(quiz.id))
+    .map((quiz) => [quiz.id, quiz]))
+  const userQuizzes = savedQuizzes.filter((quiz) => !commodityQuizIds.has(quiz.id))
+  const availableCommodityQuizzes = commodityQuizzes
+    .filter((quiz) => !removedCommodityQuizIds.has(quiz.id))
+    .map((quiz) => {
+      const savedQuiz = savedCommodityQuizzes.get(quiz.id)
+      if (!savedQuiz) return quiz
+      return {
+        ...quiz,
+        ...savedQuiz,
+        scopeSector: quiz.scopeSector === 'Coating' && savedQuiz.scopeSector === 'Other'
+          ? quiz.scopeSector
+          : savedQuiz.scopeSector ?? quiz.scopeSector,
+      }
+    })
+  return [...userQuizzes, ...availableCommodityQuizzes]
+}
+
 interface PersistedState {
   users: User[]
   quizzes: Quiz[]
@@ -164,25 +186,7 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
         const importedVersion = parsed.inspectorTimetableImportVersion ?? 0
         setUsers(importedVersion < TIMETABLE_IMPORT_VERSION ? mergeTimetableInspectors(hydratedUsers) : hydratedUsers)
         setInspectorTimetableImportVersion(Math.max(importedVersion, TIMETABLE_IMPORT_VERSION))
-        if (parsed.quizzes) {
-          const removedCommodityQuizIds = new Set(parsed.removedCommodityQuizIds ?? [])
-          const savedCommodityQuizzes = new Map(parsed.quizzes.filter((quiz) => commodityQuizIds.has(quiz.id)).map((quiz) => [quiz.id, quiz]))
-          const savedQuizzes = parsed.quizzes.filter((quiz) => !commodityQuizIds.has(quiz.id))
-          const availableCommodityQuizzes = commodityQuizzes
-            .filter((quiz) => !removedCommodityQuizIds.has(quiz.id))
-            .map((quiz) => {
-              const savedQuiz = savedCommodityQuizzes.get(quiz.id)
-              if (!savedQuiz) return quiz
-              return {
-                ...quiz,
-                ...savedQuiz,
-                scopeSector: quiz.scopeSector === 'Coating' && savedQuiz.scopeSector === 'Other'
-                  ? quiz.scopeSector
-                  : savedQuiz.scopeSector ?? quiz.scopeSector,
-              }
-            })
-          setQuizzes([...savedQuizzes, ...availableCommodityQuizzes])
-        }
+        if (parsed.quizzes) setQuizzes(mergePersistedQuizzes(parsed.quizzes, parsed.removedCommodityQuizIds))
         if (parsed.trainingResources) setTrainingResources(parsed.trainingResources)
         if (parsed.attempts) {
           const savedAttempts = storedState ? parsed.attempts : []
@@ -224,8 +228,22 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
       if (event.key !== STORAGE_KEY || !event.newValue) return
       try {
         const parsed = JSON.parse(event.newValue) as PersistedState
-        if (parsed.attempts) setAttempts(parsed.attempts)
-        if (parsed.proctoringSessions) setProctoringSessions(parsed.proctoringSessions)
+        if (parsed.users) {
+          const nextUsers = parsed.users
+          setUsers((current) => JSON.stringify(current) === JSON.stringify(nextUsers) ? current : nextUsers)
+        }
+        if (parsed.quizzes) {
+          const nextQuizzes = mergePersistedQuizzes(parsed.quizzes, parsed.removedCommodityQuizIds)
+          setQuizzes((current) => JSON.stringify(current) === JSON.stringify(nextQuizzes) ? current : nextQuizzes)
+        }
+        if (parsed.attempts) {
+          const nextAttempts = parsed.attempts
+          setAttempts((current) => JSON.stringify(current) === JSON.stringify(nextAttempts) ? current : nextAttempts)
+        }
+        if (parsed.proctoringSessions) {
+          const nextSessions = parsed.proctoringSessions
+          setProctoringSessions((current) => JSON.stringify(current) === JSON.stringify(nextSessions) ? current : nextSessions)
+        }
       } catch {
         // ignore malformed cross-tab updates
       }
@@ -249,12 +267,7 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ profiles }),
             })
-            if (response.ok) {
-              const payload = await response.json() as { profiles?: SharedInspectorProfile[] }
-              if (active && payload.profiles) {
-                setUsers((current) => mergeSharedInspectorProfiles(current, payload.profiles ?? []))
-              }
-            }
+            if (!response.ok) throw new Error('Inspector profiles could not be synchronized.')
           }
           return
         }

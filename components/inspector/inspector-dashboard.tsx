@@ -13,7 +13,7 @@ export function InspectorDashboard() {
   if (!currentUser) return null
 
   const available = quizzes.filter(
-    (quiz) => quiz.targetRole === 'inspector' && currentUser.assignedQuizIds?.includes(quiz.id),
+    (quiz) => (quiz.targetRole ?? 'inspector') === 'inspector' && currentUser.assignedQuizIds?.includes(quiz.id),
   )
 
   return (
