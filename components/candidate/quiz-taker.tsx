@@ -21,7 +21,7 @@ function formatClock(seconds: number) {
 }
 
 export function QuizTaker({ quiz }: { quiz: Quiz }) {
-  const { beginAttempt, submitAttempt, currentUser, startProctoringSession, finishProctoringSession } = useQuizStore()
+  const { beginAttempt, submitAttempt, currentUser } = useQuizStore()
   const router = useRouter()
 
   const [started, setStarted] = useState(false)
@@ -34,10 +34,10 @@ export function QuizTaker({ quiz }: { quiz: Quiz }) {
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [confirmSubmit, setConfirmSubmit] = useState(false)
   const [mediaStream, setMediaStream] = useState<MediaStream | null>(null)
-  const [proctoringSessionId, setProctoringSessionId] = useState<string | null>(null)
   const submittedRef = useRef(false)
   const recorderRef = useRef<MediaRecorder | null>(null)
   const recordingChunksRef = useRef<Blob[]>([])
+  const recordingUploadedRef = useRef(false)
 
   const totalSeconds = quiz.durationMinutes * 60
   const answeredCount = useMemo(
@@ -49,12 +49,15 @@ export function QuizTaker({ quiz }: { quiz: Quiz }) {
 
   async function stopRecording() {
     const recorder = recorderRef.current
-    if (!recorder || recorder.state === 'inactive') return null
-    const recording = new Promise<Blob>((resolve) => {
-      recorder.addEventListener('stop', () => resolve(new Blob(recordingChunksRef.current, { type: recorder.mimeType || 'video/webm' })), { once: true })
-    })
-    recorder.stop()
-    const blob = await recording
+    if (!recorder) return null
+    let blob: Blob | null = null
+    if (recorder.state !== 'inactive') {
+      const recording = new Promise<Blob>((resolve) => {
+        recorder.addEventListener('stop', () => resolve(new Blob(recordingChunksRef.current, { type: recorder.mimeType || 'video/webm' })), { once: true })
+      })
+      recorder.stop()
+      blob = await recording
+    }
     recorderRef.current = null
     mediaStream?.getTracks().forEach((track) => track.stop())
     setMediaStream(null)
@@ -67,13 +70,20 @@ export function QuizTaker({ quiz }: { quiz: Quiz }) {
     try {
       if (!attemptId || !attemptToken) throw new Error('The assessment attempt is not active. Please return to the test list and try again.')
       const timeSpent = totalSeconds - secondsLeft
-      const attempt = await submitAttempt(quiz, answers, timeSpent, attemptId, attemptToken)
       const blob = await stopRecording()
-      if (proctoringSessionId) {
-        const recordingId = blob ? `recording-${proctoringSessionId}` : undefined
-        if (blob && recordingId) await saveProctoringRecording(recordingId, blob)
-        finishProctoringSession(proctoringSessionId, 'completed', attempt.id, recordingId)
+      let recordingError: string | null = null
+      if (blob) {
+        try {
+          await saveProctoringRecording(attemptId, attemptToken, blob)
+          recordingUploadedRef.current = true
+        } catch (error) {
+          recordingError = error instanceof Error ? error.message : 'The recording could not be saved.'
+        }
+      } else if (!recordingUploadedRef.current) {
+        recordingError = 'No recording data was captured.'
       }
+      const attempt = await submitAttempt(quiz, answers, timeSpent, attemptId, attemptToken)
+      if (recordingError) setSubmitError(`Your test was submitted, but its recording could not be saved: ${recordingError}`)
       setResult(attempt)
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } catch (error) {
@@ -87,7 +97,6 @@ export function QuizTaker({ quiz }: { quiz: Quiz }) {
     setAttemptNumber(reservation.attemptNumber)
     setAttemptId(reservation.attemptId)
     setAttemptToken(reservation.attemptToken)
-    const session = startProctoringSession(quiz, true, true)
     const recorder = new MediaRecorder(stream)
     recordingChunksRef.current = []
     recorder.ondataavailable = (event) => {
@@ -96,7 +105,6 @@ export function QuizTaker({ quiz }: { quiz: Quiz }) {
     recorder.start(1000)
     recorderRef.current = recorder
     setMediaStream(stream)
-    setProctoringSessionId(session.id)
     setStarted(true)
   }
 
@@ -139,6 +147,7 @@ export function QuizTaker({ quiz }: { quiz: Quiz }) {
           </h1>
           <p className="text-sm text-muted-foreground">Your submission has been recorded.</p>
         </div>
+        {submitError && <p role="alert" className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">{submitError}</p>}
         <p className="text-sm font-semibold">Attempt {result.attemptNumber} · Authorization grade {formatAuthorizationGrade(getAuthorizationGrade(result.percentage, result.recordedGrade))} · {result.competencyStatus ?? (result.passed ? 'COMPETENT' : 'NOT COMPETENT')}</p>
         {!result.passed && <p className="text-sm text-muted-foreground">You may retake this assessment from {new Date(getRetakeAvailableAt(result.submittedAt)).toLocaleDateString()}.</p>}
         <ResultSummary attempt={result} quiz={quiz} user={currentUser ?? undefined} />

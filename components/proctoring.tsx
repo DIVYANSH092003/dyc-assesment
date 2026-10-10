@@ -4,48 +4,37 @@ import { useEffect, useRef, useState } from 'react'
 import { Camera, LoaderCircle, Mic, ShieldCheck, Video } from 'lucide-react'
 import { Badge, Card } from '@/components/ui-kit'
 import { Button } from '@/components/ui/button'
+import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
 
-const DATABASE_NAME = 'dyc-quiz-proctoring'
-const STORE_NAME = 'recordings'
-
-function openRecordingDb() {
-  return new Promise<IDBDatabase>((resolve, reject) => {
-    const request = indexedDB.open(DATABASE_NAME, 1)
-    request.onupgradeneeded = () => request.result.createObjectStore(STORE_NAME)
-    request.onsuccess = () => resolve(request.result)
-    request.onerror = () => reject(request.error)
+export async function saveProctoringRecording(attemptId: string, attemptToken: string, blob: Blob) {
+  const contentType = blob.type.split(';', 1)[0] || 'video/webm'
+  const signResponse = await fetch('/api/proctoring-recordings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'sign-upload', attemptId, attemptToken, contentType }),
   })
-}
+  const signedUpload = await signResponse.json() as { path?: string; token?: string; error?: string }
+  if (!signResponse.ok || !signedUpload.path || !signedUpload.token) {
+    throw new Error(signedUpload.error ?? 'A secure upload link could not be created.')
+  }
 
-export async function saveProctoringRecording(id: string, blob: Blob) {
-  const db = await openRecordingDb()
-  await new Promise<void>((resolve, reject) => {
-    const request = db.transaction(STORE_NAME, 'readwrite').objectStore(STORE_NAME).put(blob, id)
-    request.onsuccess = () => resolve()
-    request.onerror = () => reject(request.error)
-  })
-  db.close()
-}
+  const supabase = createSupabaseBrowserClient()
+  const { error: uploadError } = await supabase.storage
+    .from('inspector-recordings')
+    .uploadToSignedUrl(signedUpload.path, signedUpload.token, blob, {
+      contentType,
+    })
+  if (uploadError) throw new Error(uploadError.message)
 
-export async function getProctoringRecording(id: string) {
-  const db = await openRecordingDb()
-  const blob = await new Promise<Blob | undefined>((resolve, reject) => {
-    const request = db.transaction(STORE_NAME, 'readonly').objectStore(STORE_NAME).get(id)
-    request.onsuccess = () => resolve(request.result as Blob | undefined)
-    request.onerror = () => reject(request.error)
+  const completeResponse = await fetch('/api/proctoring-recordings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'complete', attemptId, attemptToken, path: signedUpload.path }),
   })
-  db.close()
-  return blob
-}
-
-export async function deleteProctoringRecording(id: string) {
-  const db = await openRecordingDb()
-  await new Promise<void>((resolve, reject) => {
-    const request = db.transaction(STORE_NAME, 'readwrite').objectStore(STORE_NAME).delete(id)
-    request.onsuccess = () => resolve()
-    request.onerror = () => reject(request.error)
-  })
-  db.close()
+  const completion = await completeResponse.json() as { error?: string }
+  if (!completeResponse.ok) {
+    throw new Error(completion.error ?? 'The recording could not be linked to the assessment.')
+  }
 }
 
 export function ProctoringIntro({
@@ -54,6 +43,7 @@ export function ProctoringIntro({
   onStart: (stream: MediaStream) => Promise<void>
 }) {
   const [requesting, setRequesting] = useState(false)
+  const [consented, setConsented] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   async function requestDevices() {
@@ -79,7 +69,7 @@ export function ProctoringIntro({
         <div>
           <h2 className="font-heading font-semibold">Supervised test</h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Your camera and microphone stay active during the assessment. The recording is saved for administrator review.
+            Your camera and microphone stay active during the assessment. The recording is uploaded to private storage for administrator review.
           </p>
         </div>
       </div>
@@ -87,8 +77,17 @@ export function ProctoringIntro({
         <div className="flex items-center gap-2 rounded-md bg-card px-3 py-2"><Camera className="h-4 w-4 text-primary" /> Camera required</div>
         <div className="flex items-center gap-2 rounded-md bg-card px-3 py-2"><Mic className="h-4 w-4 text-primary" /> Microphone required</div>
       </div>
+      <label className="flex items-start gap-2 text-sm">
+        <input
+          type="checkbox"
+          className="mt-1"
+          checked={consented}
+          onChange={(event) => setConsented(event.target.checked)}
+        />
+        <span>I understand that this assessment is recorded using my camera and microphone and that the recording is stored for administrator review.</span>
+      </label>
       {error && <p className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</p>}
-      <Button onClick={requestDevices} disabled={requesting}>
+      <Button onClick={requestDevices} disabled={requesting || !consented}>
         {requesting ? <><LoaderCircle className="h-4 w-4 animate-spin" /> Checking devices...</> : 'Allow devices and start test'}
       </Button>
     </Card>

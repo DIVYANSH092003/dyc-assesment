@@ -42,7 +42,7 @@ export default function AdminInspectorsPage() {
 }
 
 function InspectorInformation() {
-  const { users, quizzes, trainingResources, updateUser, proctoringSessions, deleteProctoringSession } = useQuizStore()
+  const { users, quizzes, trainingResources, updateUser } = useQuizStore()
   const [activeTab, setActiveTab] = useState<'information' | 'assignment' | 'monitoring'>('information')
   const people = users.filter((user) => user.role === 'inspector')
   const [selectedUserId, setSelectedUserId] = useState(people[0]?.id ?? '')
@@ -182,12 +182,6 @@ function InspectorInformation() {
     }
   }
 
-  async function deleteFootage(session: typeof proctoringSessions[number]) {
-    if (!session.recordingId || !window.confirm(`Delete the monitoring footage for ${session.userName}?`)) return
-    const result = await deleteProctoringSession(session.id)
-    setMessage(result.ok ? 'Monitoring footage deleted.' : result.error ?? 'The footage could not be deleted.')
-  }
-
   return (
     <div className="flex flex-col gap-6">
       <div>
@@ -210,7 +204,7 @@ function InspectorInformation() {
       </div>
 
       {activeTab === 'monitoring' ? (
-        <ProctoringPanel sessions={proctoringSessions} onDelete={deleteFootage} />
+        <ProctoringPanel />
       ) : activeTab === 'information' ? (
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.8fr)]">
           <Card className="flex flex-col gap-5">

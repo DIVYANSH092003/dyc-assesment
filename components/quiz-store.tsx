@@ -8,12 +8,11 @@ import {
   useMemo,
   useState,
 } from 'react'
-import type { Attempt, ProctoringSession, Question, Quiz, TrainingResource, User } from '@/lib/types'
+import type { Attempt, Question, Quiz, TrainingResource, User } from '@/lib/types'
 import { isPassingEvaluation } from '@/lib/evaluation'
 import { toSharedInspectorProfile, type SharedInspectorProfile } from '@/lib/inspector-profile-shared'
 import { seedAttempts, seedQuizzes, seedUsers } from '@/lib/sample-data'
 import { createImportedInspectorResults } from '@/lib/imported-results'
-import { deleteProctoringRecording } from '@/components/proctoring'
 import commodityQuizData from '@/data/inspector-commodity-quizzes.json'
 import inspectorTimetableData from '@/data/inspector-timetable-users.json'
 
@@ -56,7 +55,6 @@ interface PersistedState {
   removedCommodityQuizIds?: string[]
   trainingResources?: TrainingResource[]
   attempts: Attempt[]
-  proctoringSessions?: ProctoringSession[]
   currentUserId: string | null
 }
 
@@ -67,7 +65,6 @@ interface QuizContextValue {
   quizzes: Quiz[]
   trainingResources: TrainingResource[]
   attempts: Attempt[]
-  proctoringSessions: ProctoringSession[]
   login: (email: string, password: string) => { ok: boolean; error?: string }
   resetAdminPassword: (password: string) => { ok: boolean; error?: string }
   createAccount: (name: string, email: string, password: string, role: 'inspector' | 'tc_qa') => { ok: boolean; error?: string }
@@ -82,9 +79,6 @@ interface QuizContextValue {
   deleteQuiz: (id: string) => void
   beginAttempt: (quiz: Quiz) => Promise<{ attemptId: string; attemptNumber: number; attemptToken: string }>
   submitAttempt: (quiz: Quiz, answers: Record<string, string[]>, timeSpent: number, attemptId: string, attemptToken: string) => Promise<Attempt>
-  startProctoringSession: (quiz: Quiz, cameraGranted: boolean, microphoneGranted: boolean) => ProctoringSession
-  finishProctoringSession: (id: string, status: 'completed' | 'interrupted', attemptId?: string, recordingId?: string) => void
-  deleteProctoringSession: (id: string) => Promise<{ ok: boolean; error?: string }>
 }
 
 const QuizContext = createContext<QuizContextValue | null>(null)
@@ -160,7 +154,6 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
   const [quizzes, setQuizzes] = useState<Quiz[]>(() => [...seedQuizzes, ...commodityQuizzes])
   const [trainingResources, setTrainingResources] = useState<TrainingResource[]>([])
   const [attempts, setAttempts] = useState<Attempt[]>([...importedInspectorResults, ...seedAttempts])
-  const [proctoringSessions, setProctoringSessions] = useState<ProctoringSession[]>([])
   const [currentUserId, setCurrentUserId] = useState<string | null>(null)
 
   // hydrate from localStorage
@@ -195,7 +188,6 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
             ...savedAttempts.filter((attempt) => !importedInspectorResults.some((imported) => imported.id === attempt.id)),
           ])
         }
-        if (parsed.proctoringSessions) setProctoringSessions(parsed.proctoringSessions)
         setCurrentUserId(parsed.currentUserId ?? null)
       } else {
         setUsers(mergeTimetableInspectors(seedUsers))
@@ -218,10 +210,10 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
     })
     const visibleQuizIds = new Set(quizzes.map((quiz) => quiz.id))
     const removedCommodityQuizIds = commodityQuizzes.filter((quiz) => !visibleQuizIds.has(quiz.id)).map((quiz) => quiz.id)
-    const state: PersistedState = { users, quizzes: savedQuizzes, removedCommodityQuizIds, inspectorTimetableImportVersion, trainingResources, attempts, proctoringSessions, currentUserId }
+    const state: PersistedState = { users, quizzes: savedQuizzes, removedCommodityQuizIds, inspectorTimetableImportVersion, trainingResources, attempts, currentUserId }
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
     LEGACY_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key))
-  }, [ready, users, quizzes, inspectorTimetableImportVersion, trainingResources, attempts, proctoringSessions, currentUserId])
+  }, [ready, users, quizzes, inspectorTimetableImportVersion, trainingResources, attempts, currentUserId])
 
   useEffect(() => {
     function syncFromOtherTab(event: StorageEvent) {
@@ -239,10 +231,6 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
         if (parsed.attempts) {
           const nextAttempts = parsed.attempts
           setAttempts((current) => JSON.stringify(current) === JSON.stringify(nextAttempts) ? current : nextAttempts)
-        }
-        if (parsed.proctoringSessions) {
-          const nextSessions = parsed.proctoringSessions
-          setProctoringSessions((current) => JSON.stringify(current) === JSON.stringify(nextSessions) ? current : nextSessions)
         }
       } catch {
         // ignore malformed cross-tab updates
@@ -440,48 +428,6 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
     return payload
   }, [currentUserId])
 
-  const startProctoringSession = useCallback(
-    (quiz: Quiz, cameraGranted: boolean, microphoneGranted: boolean) => {
-      const session: ProctoringSession = {
-        id: `proctor-${Date.now()}`,
-        quizId: quiz.id,
-        quizTitle: quiz.title,
-        userId: currentUserId ?? 'unknown',
-        userName: currentUser?.name ?? 'Unknown',
-        startedAt: Date.now(),
-        status: 'live',
-        cameraGranted,
-        microphoneGranted,
-      }
-      setProctoringSessions((prev) => [session, ...prev])
-      return session
-    },
-    [currentUser, currentUserId],
-  )
-
-  const finishProctoringSession = useCallback(
-    (id: string, status: 'completed' | 'interrupted', attemptId?: string, recordingId?: string) => {
-      setProctoringSessions((prev) => prev.map((session) => session.id === id
-        ? { ...session, status, endedAt: Date.now(), attemptId, recordingId }
-        : session,
-      ))
-    },
-    [],
-  )
-
-  const deleteProctoringSession = useCallback(async (id: string) => {
-    if (currentUser?.role !== 'admin') return { ok: false, error: 'Only Admin can delete monitoring footage.' }
-    const session = proctoringSessions.find((item) => item.id === id)
-    if (!session) return { ok: false, error: 'The monitoring session no longer exists.' }
-    try {
-      if (session.recordingId) await deleteProctoringRecording(session.recordingId)
-    } catch {
-      return { ok: false, error: 'The footage could not be deleted from browser storage.' }
-    }
-    setProctoringSessions((prev) => prev.filter((session) => session.id !== id))
-    return { ok: true }
-  }, [currentUser, proctoringSessions])
-
   const value: QuizContextValue = {
     ready,
     currentUser,
@@ -489,7 +435,6 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
     quizzes,
     trainingResources,
     attempts,
-    proctoringSessions,
     login,
     resetAdminPassword,
     createAccount,
@@ -504,9 +449,6 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
     deleteQuiz,
     beginAttempt,
     submitAttempt,
-    startProctoringSession,
-    finishProctoringSession,
-    deleteProctoringSession,
   }
 
   return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>
